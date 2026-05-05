@@ -29,13 +29,13 @@ export default function Home() {
       <Partner />
       <News />
       {/* <Story /> */}
-      <WhyVakilkaro />
-      <CallToAction />
-      <VakilKaroWay />
-      <ExpertSlider />
-      <Testimonials />
-      <ContactSection />
-      <Faq />
+      {/* <WhyVakilkaro /> */}
+      {/* <CallToAction /> */}
+      {/* <VakilKaroWay /> */}
+      {/* <ExpertSlider /> */}
+      {/* <Testimonials /> */}
+      {/* <ContactSection /> */}
+      {/* <Faq /> */}
       <TawkTo />
       <Footer />
     </>

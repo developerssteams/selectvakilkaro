@@ -27,9 +27,15 @@ const VerifiedServices = () => {
 
   return (
     <section className="vs-section">
+      <h1 className="hhh">
+        From Startup to Scale-Up — We Power Your
+        <span className="highlight"> Growth</span>
+      </h1>
 
-      <h1>Form Startup To Scale-Up-We Power Your <span style={{color:"#f5c542"}} > Growth</span>.</h1>
-      <p>All-in-one platform for online legal consultation,business incorporation,corporate compliance,and startup-friendly solutions- <br /> tailored for every industry.</p>
+      <p className="hhh">
+        All-in-one platform for legal consultation, business setup, and compliance solutions.
+      </p>
+
 
       {/* TOP CARDS */}
       <div className="vs-top">
@@ -41,12 +47,9 @@ const VerifiedServices = () => {
           >
             <h3>{item.title}
               <span className="vs-arrow">
-              <FiArrowUpRight />
-            </span>
+                <FiArrowUpRight />
+              </span>
             </h3>
-            {/* <span className="vs-arrow">
-              <FiArrowUpRight />
-            </span> */}
           </div>
         ))}
       </div>

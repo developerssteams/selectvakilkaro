@@ -3,6 +3,11 @@
   color: #fff;
 }
 
+.hhh {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 /* TOP ROW */
 .vs-top {
   display: flex;
@@ -29,8 +34,9 @@
 
 
 .vs-top-card.active {
-  background: #fff;
-  color: #000;
+  background: #ffffff0f;
+  
+  border-color: #f5c542;
 }
 
 
@@ -50,13 +56,16 @@
 /* BOTTOM PANEL */
 .vs-bottom {
   margin-top: 20px;
-  background: #eee;
+  /* background: #eee; */
+  background: white;
   color: #000;
   border-radius: 10px;
   padding: 25px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  margin-top: 5px;
+  border-color: #f5c542 !important;
 }
 
 /* LEFT SIDE */

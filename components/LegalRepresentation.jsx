@@ -81,8 +81,14 @@ const LegalRepresentation = () => {
 
       {/* HEADER */}
       <div className="why-top">
-        <h1>Why Choose <span style={{ color: "#f5c542" }}>VakilKaro</span>?</h1>
-        <button className="start-btn">Get Started →</button>
+        <h1>
+          Why Thousands Trust <span style={{ color: "#f5c542" }}>VakilKaro</span> ?
+        </h1>
+        <p>
+          Choose Vakilkaro for unmatched legal expertise, premium experience and a
+          strong professional network that ensures your business grows without legal
+          hurdles.
+        </p>
       </div>
 
       {/* MAIN CONTENT */}

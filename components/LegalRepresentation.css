@@ -20,22 +20,34 @@
 /* HEADER */
 .why-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 50px;
   position: relative;
   z-index: 1;
 }
 
+.why-top {
+  display: flex;
+  flex-direction: column; /* 🔥 ye main fix hai */
+  align-items: center;   /* center horizontally */
+  text-align: center;
+}
+
 .why-top h1 {
   font-size: 48px;
   font-weight: 700;
-  background: linear-gradient(135deg, #fff, #a0a0a0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* color: transparent; */
+  margin-bottom: 8px; /* gap control */
+  line-height: 1.2;
+}
+
+.why-top p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 16px;
+  /* color: #ccc; */
   color: white;
-  letter-spacing: -0.02em;
 }
 
 .start-btn {
@@ -71,7 +83,7 @@
 .why-left,
 .why-right {
   /* background: rgba(18, 18, 18, 0.95); */
-  background: #ffffff0d;
+  background: #ffffff0f;
 
   backdrop-filter: blur(10px);
   border-radius: 24px;
@@ -139,14 +151,14 @@
 
 
 .why-item p {
-    color: #e0e0e0;
-    letter-spacing: .5px;
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  color: #e0e0e0;
+  letter-spacing: .5px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .why-item.active {
@@ -240,11 +252,12 @@
 .trusted-partners {
   margin-top: 50px;
   padding: 50px 30px;
-  background: rgba(18, 18, 18, 0.8);
+  /* background: rgba(18, 18, 18, 0.8); */
+  background: #ffffff0f;
   backdrop-filter: blur(10px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  
+
 }
 
 .trusted-title {
