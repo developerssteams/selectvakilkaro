@@ -4,18 +4,15 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Header.css";
 import Link from "next/link";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // AOS Init
   useEffect(() => {
     AOS.init({ duration: 1200, once: false });
   }, []);
 
-  // Bootstrap JS (CLIENT SIDE ONLY)
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -30,74 +27,97 @@ function Navbar() {
 
   return (
     <>
-    
-    
-
       {/* ✅ HERO SECTION */}
       <section className="header-section py-5">
         <div className="container hero-section">
-          <div className="row justify-content-center text-center mt-5 pt-5">
-            <div className="col-md-10" data-aos="fade-up">
+          <div className="row justify-content-center text-center  pt-5">
+            <div className="col-md-7" data-aos="fade-up">
 
-              <h4 className="hero-title">
-                Business & Legal Services <br /> Under One Roof
-              </h4>
+              {/* ⭐ RATING BAR ADDED HERE */}
+              <div className="rating-bar mb-3" data-aos="fade-down">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                  alt="google"
+                  className="google-icon"
+                />
+
+                <div className="rating-users">
+                  <img src="https://i.pravatar.cc/40?img=1" />
+                  <img src="https://i.pravatar.cc/40?img=2" />
+                  <img src="https://i.pravatar.cc/40?img=3" />
+                  <img src="https://i.pravatar.cc/40?img=4" />
+                </div>
+
+                <div className="rating-text">
+                  <span className="stars">★★★★★</span>
+                  <span className="rating-value">4.5/5</span>
+                  <span className="reviews">(20k+ Reviews)</span>
+                </div>
+              </div>
+
+              {/* <h1 className="hero-title">
+                Legal Mein Kuch Bhi karo To <br />  <span style={{ color: '#ff7a00' }}> Vakilkaro</span>
+              </h1> */}
+              <h1 className="hero-title">
+                Legal Mein Kuch Bhi karo To <br />  <span style={{ color: '#f5c542' }}> Vakilkaro</span>
+              </h1>
 
               <p className="hero-subtitle">
                 Business Registration, Trademark, Taxation, Legal Compliance &
                 Legal Services in few clicks.
               </p>
 
+
+              <div className="search-wrapper">
+                <div className="search-box">
+
+                  <input
+                    type="text"
+                    placeholder="Search services, registration..."
+                    className="search-field"
+                    onChange={(e) => handleSearch(e.target.value)}
+                  />
+
+                  <span className="search-icon">🔍</span>
+
+                </div>
+              </div>
               <div className="hero-buttons mt-4">
                 <button className="hero-btn primary">View Services</button>
                 <button className="hero-btn secondary">Hire Experts</button>
               </div>
 
-              {/* ✅ STATS */}
-              <div className="row hero-stats align-items-center">
-                <div className="col-md-3">
-                  <h5 className="stats-text">
-                    Over the years, we have delivered some extraordinary results.
-                  </h5>
-                </div>
 
-                <div className="col-md-9">
-                  <div className="row">
-
-                    <div className="col">
-                      <div className="stat-box">
-                        <h3>850+</h3>
-                        <p>Projects <br /> Delivered</p>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="stat-box">
-                        <h3>88%</h3>
-                        <p>Client <br /> Retention</p>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="stat-box">
-                        <h3>150+</h3>
-                        <p>Experts <br /> Team</p>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="stat-box">
-                        <h3>15+</h3>
-                        <p>Years <br /> Experience</p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
 
             </div>
+
+            <div className="hero-stats-bar">
+              <div className="stats-left">
+                <span className="stats-icon">✓</span>
+                <span className="stats-title">
+                  we have delivered some extraordinary results.
+                </span>
+              </div>
+
+              <div className="stats-pills">
+                <div className="pill">
+                  <span className="highlight">850+</span> Projects Delivered
+                </div>
+
+                <div className="pill">
+                  <span className="highlight">88%</span> Client Retention
+                </div>
+
+                <div className="pill">
+                  <span className="highlight">150+</span> Expert Team
+                </div>
+
+                <div className="pill">
+                  <span className="highlight">15+</span> Years Experience
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

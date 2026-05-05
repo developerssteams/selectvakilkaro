@@ -1,5 +1,5 @@
 import React from "react";
-import "./VerifiedServicescontent.css";
+// import "./VerifiedServicescontent.css";
 
 const VerifiedServicescontent = () => {
   return (

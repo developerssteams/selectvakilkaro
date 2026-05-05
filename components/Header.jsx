@@ -1,24 +1,21 @@
 "use client"
 import React, { useState, useEffect } from "react";
-// import logo from "vakilkaro.png";
+import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./Header.css";
-// import { Link } from "react-router-dom";
-import Link from "next/link"; 
+
+import Link from "next/link";
 
 function Header() {
-    const [serviceType, setServiceType] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
 
-    // Init AOS
     useEffect(() => {
         AOS.init({ duration: 1200, once: false });
     }, []);
+
     useEffect(() => {
         import("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
@@ -27,13 +24,14 @@ function Header() {
         setMenuOpen(!menuOpen);
     };
 
-    // Close menu when clicking outside
     const closeMenu = () => {
         setMenuOpen(false);
     };
 
     return (
         <>
+           
+
             <header className="rk-header">
                 <div className="rk-box">
                     {/* Logo */}
@@ -43,11 +41,9 @@ function Header() {
                         </Link>
                     </div>
 
-
                     {/* Desktop Navigation */}
                     <nav className="rk-nav-desktop">
                         <div className="rk-menu-item"><a href="#">About Us</a></div>
-                        {/* <div className="rk-menu-item"><a href="Verified">Verified Services</a></div> */}
                         <div className="rk-menu-item">
                             <Link href="/verified">Verified Services</Link>
                         </div>
@@ -57,7 +53,7 @@ function Header() {
                         <div className="rk-menu-item pill-btn"><a href="#">Contact Us</a></div>
                     </nav>
 
-                    {/* Desktop Right Section */}
+                    {/* Right Section */}
                     <div className="rk-right-desktop">
                         <div className="rk-search-box">
                             <input
@@ -70,13 +66,21 @@ function Header() {
                         <button className="rk-login-btn">Log In</button>
                     </div>
 
-                    {/* Mobile Toggle Button */}
-                    <div className="rk-toggle" onClick={toggleMenu}>
-                        <i className={menuOpen ? "ri-close-line" : "ri-menu-line"}></i>
-                    </div>
+                    {/* Toggle Button - IMPROVED VERSION */}
+                    <button 
+                        className={`rk-toggle-btn ${menuOpen ? "active" : ""}`} 
+                        onClick={toggleMenu}
+                        aria-label="Toggle Menu"
+                    >
+                        <span className="toggle-icon">
+                            <span className="toggle-line"></span>
+                            <span className="toggle-line"></span>
+                            <span className="toggle-line"></span>
+                        </span>
+                    </button>
                 </div>
 
-                {/* Mobile Slide Menu */}
+                {/* Mobile Menu */}
                 <div className={`rk-mobile-menu ${menuOpen ? "open" : ""}`}>
                     <div className="mobile-menu-content">
                         <div className="mobile-search-box">
@@ -90,22 +94,24 @@ function Header() {
 
                         <nav className="rk-nav-mobile">
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>About</a></div>
-                            <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Verified Services</a></div>
+                            <div className="rk-menu-item"><Link href="/verified" onClick={closeMenu}>Verified Services</Link></div>
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Marketplace</a></div>
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Learning</a></div>
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Become Partner</a></div>
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Contact Us</a></div>
                         </nav>
 
-                        <button className="rk-login-btn mobile-login-btn" onClick={closeMenu}>Log In</button>
+                        <button className="rk-login-btn mobile-login-btn" onClick={closeMenu}>
+                            Log In
+                        </button>
                     </div>
                 </div>
 
-                {/* Overlay for closing menu */}
+                {/* Overlay */}
                 {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
             </header>
-
-
+            
+            
         </>
     );
 }

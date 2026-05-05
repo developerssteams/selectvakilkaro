@@ -15,15 +15,16 @@ import Navbar_Section from "@/components/Navbar_Section";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Business_Pricing from "@/components/Business_Pricing";
-import Pvt_Query_Card from "@/components/Pvt_Query_Card";
+import Startup_Query_Card from "@/components/Startup_Query_Card";
 import PvtServicescontent from "@/components/PvtServicescontent";
 
-export default function PVT() {
+export default function Startupregistration() {
     return (
         <>
             <Header />
             <Navbar_Section />
-            <Pvt_Query_Card />
+            
+            <Startup_Query_Card />
             <Business_Pricing />
             <Trademark_Registration />
             <StartupDocument />

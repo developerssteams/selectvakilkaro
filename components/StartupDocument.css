@@ -1,170 +1,93 @@
-/* Section Background */
 .startupdocument-section {
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* padding: 60px 20px; */
-    min-height: 60vh;
+    padding: 60px 20px;
 }
 
-/* Main Container */
+/* Container */
 .startupdocument-container {
     max-width: 1200px;
     width: 100%;
-    background: #F5F5F5;
-    border-radius: 24px;
-    display: flex;
-    gap: 50px;
-    padding: 50px;
+    background: #f3f3f3;
+    padding: 40px;
+    border-radius: 20px;
 }
 
-/* LEFT SIDE - Styling */
-.startupdocument-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.startupdocument-left h2 {
-    font-size: 52px;
+/* Heading */
+.startupdocument-heading {
+    text-align: center;
+    font-size: 42px;
     font-weight: 400;
-    color: #000;
-    line-height: 1.2;
-    margin: 0;
+    margin-bottom: 30px;
 }
 
-.startupdocument-left h2 span {
+.startupdocument-heading span {
     font-weight: 800;
 }
 
-.startupdocument-left p {
-    font-size: 18px;
-    color: #666;
-    margin-top: 20px;
-    line-height: 1.5;
+/* Dark Card */
+.startupdocument-card {
+    background: #1f1f1f;
+    border-radius: 20px;
+    padding: 30px;
 }
 
-/* RIGHT SIDE - Card Style */
-.startupdocument-right {
-    flex: 1;
-    background: #0FA38A;
-    border-radius: 24px;
-    padding: 35px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+/* Grid Layout */
+.startupdocument-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-/* TABS Styling */
-.startupdocument-tabs {
+/* Each Item */
+.startupdocument-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px 18px;
     display: flex;
-    gap: 35px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-}
-
-.startupdocument-tabs button {
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 5px 0;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.startupdocument-tabs button:hover {
-    color: #fff;
-}
-
-.startupdocument-tabs button.active {
-    color: #fff;
-}
-
-.startupdocument-tabs button.active::after {
-    content: '';
-    position: absolute;
-    bottom: -16px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-}
-
-/* PILLS / Documents Styling */
-.startupdocument-pills {
-    display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
-    margin-top: 10px;
+    transition: 0.3s;
 }
 
-.startupdocument-pills span {
-    background: #E6F7F3;
-    color: #0FA38A;
-    padding: 10px 22px;
-    border-radius: 40px;
-    font-size: 15px;
-    font-weight: 600;
-    display: inline-block;
-    transition: transform 0.2s;
-    cursor: default;
-}
-
-.startupdocument-pills span:hover {
+/* Hover */
+.startupdocument-item:hover {
     transform: translateY(-3px);
 }
 
-/* RESPONSIVE - Mobile & Tablet */
-@media (max-width: 900px) {
-    .startupdocument-container {
-        flex-direction: column;
-        padding: 35px;
-        gap: 30px;
-    }
+/* Icon */
+.startupdocument-icon {
+    width: 36px;
+    height: 36px;
+    background: #f4c430;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
 
-    .startupdocument-left h2 {
-        font-size: 40px;
-        text-align: center;
-    }
+/* Text */
+.startupdocument-item p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: black;
+}
 
-    .startupdocument-left p {
-        text-align: center;
-        font-size: 16px;
-    }
-
-    .startupdocument-right {
-        padding: 30px;
-    }
-
-    .startupdocument-tabs {
-        justify-content: center;
-        gap: 25px;
+/* Responsive */
+@media (max-width: 992px) {
+    .startupdocument-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 550px) {
-    .startupdocument-container {
-        padding: 25px;
+@media (max-width: 500px) {
+    .startupdocument-grid {
+        grid-template-columns: 1fr;
     }
 
-    .startupdocument-left h2 {
-        font-size: 32px;
-    }
-
-    .startupdocument-tabs {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .startupdocument-tabs button {
-        font-size: 16px;
-    }
-
-    .startupdocument-pills span {
-        font-size: 13px;
-        padding: 8px 16px;
+    .startupdocument-heading {
+        font-size: 28px;
     }
 }

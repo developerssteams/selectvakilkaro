@@ -1,82 +1,150 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+
+import { useState, useEffect } from "react";
 import "./LegalRepresentation.css";
 
-const services = [
-  "Company Registration",
-  "GST Registration",
-  "Trademark Registration",
-  "Legal Notice",
-  "Startup Compliance",
-  "Business Consulting",
+// 4 Titles ka content
+const contentData = [
+  {
+    title: "LARGEST NETWORK",
+    icon: "₹",
+    heading: "Obtain Authorization from Government Regulatory Authorities",
+    description: "Get your business registered and authorized by the government with our expert network of 5000+ legal professionals.",
+    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+  },
+  {
+    title: "BEST PRICE GUARANTEE",
+    icon: "📄",
+    heading: "Affordable Legal Services with Price Match Guarantee",
+    description: "Found a lower price elsewhere? We'll match it. Quality legal services at the best rates in the industry.",
+    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+  },
+  {
+    title: "PROFESSIONAL TEAM",
+    icon: "🎧",
+    heading: "Expert Lawyers & Chartered Accountants at Your Service",
+    description: "Our team of experienced professionals ensures your compliance and legal needs are handled with precision.",
+    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+  },
+  {
+    title: "24/7 SUPPORT",
+    icon: "⏱",
+    heading: "Round the Clock Legal Assistance & Query Resolution",
+    description: "Need help anytime? Our support team is available 24/7 to answer your questions and guide you.",
+    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+  }
+];
+
+const partners = [
+  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
+  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
+  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
+  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
 ];
 
 const LegalRepresentation = () => {
-  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  // Har title ke liye 5 second ka time (line complete hone tak)
+  const DURATION = 5000; // 5 seconds
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    let index = 0;
+    // Reset progress when activeIndex changes
+    setProgress(0);
+
+    const startTime = Date.now();
 
     const interval = setInterval(() => {
-      const cardWidth = slider.children[0].offsetWidth + 24;
+      const elapsed = Date.now() - startTime;
+      const newProgress = (elapsed / DURATION) * 100;
 
-      index++;
-      if (index > services.length - 4) index = 0;
-
-      slider.scrollTo({
-        left: cardWidth * index,
-        behavior: "smooth",
-      });
-    }, 3000);
+      if (newProgress >= 100) {
+        // Line complete ho gayi, next title pe move karo
+        setProgress(100);
+        setTimeout(() => {
+          setActiveIndex((prev) => (prev + 1) % contentData.length);
+        }, 50);
+        clearInterval(interval);
+      } else {
+        setProgress(newProgress);
+      }
+    }, 16); // 60fps ke liye
 
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]); // activeIndex change hone par naya timer start
+
+  const currentContent = contentData[activeIndex];
 
   return (
-    <section className="legal-section">
+    <section className="why-section">
 
-      {/* ===== HEADING STRIP ===== */}
-
-
-      {/* ===== SUB HEADER ===== */}
-      <div className="legal-header">
-
-        <div className="legalrep-top">
-          <div className="verified-strip  ">
-            <h1>
-              Specialized <span> Legal Representation </span>
-            </h1>
-          </div>
-
-           <span className="vs-header-icon">
-            <FiArrowUpRight />
-          </span>
-        </div>
-
-        <p>
-          All-in-one platform for online legal consultation, business
-          incorporation, corporate compliance, and startup-friendly
-          solutions—tailored for every industry.
-        </p>
-
+      {/* HEADER */}
+      <div className="why-top">
+        <h1>Why Choose <span style={{ color: "#f5c542" }}>VakilKaro</span>?</h1>
+        <button className="start-btn">Get Started →</button>
       </div>
 
-      {/* ===== SLIDER ===== */}
-      <div className="legal-slider" ref={sliderRef}>
-        {services.map((title, i) => (
-          <div className="legal-card" key={i}>
-            <div>
-              <h4 className="texttitile">{title}</h4>
-              <p>Lorem Ipsum is simply dummy text</p>
-            </div>
+      {/* MAIN CONTENT */}
+      <div className="why-container">
 
-            <span className="arrow-icon">
-              <FiArrowUpRight />
-            </span>
+        {/* LEFT BOX - 4 Titles with Progress Line */}
+        <div className="why-left">
+          {contentData.map((item, index) => (
+            <div
+              key={index}
+              className={`why-item ${activeIndex === index ? "active" : ""}`}
+              onClick={() => {
+                setActiveIndex(index);
+                setProgress(0);
+              }}
+            >
+              <p><span>{item.icon}</span>
+                {item.title}</p>
+              {/* Progress Bar - Sirf active wale mein dikhegi */}
+              {activeIndex === index && (
+                <div className="item-progress-bar">
+                  <div
+                    className="item-progress-fill"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* RIGHT BOX - Dynamic Content */}
+        <div className="why-right">
+          {/* Top Progress Line */}
+          {/* <div className="top-progress-bar">
+            <div className="top-progress-fill" style={{ width: `${progress}%` }} />
+          </div> */}
+
+          <h2>
+            {currentContent.heading}
+          </h2>
+          <p className="description">{currentContent.description}</p>
+          <div className="logo-row">
+            {currentContent.logos.map((logo, idx) => (
+              <img key={idx} src={logo} alt="certification" />
+            ))}
           </div>
-        ))}
+        </div>
+      </div>
+
+      {/* TRUSTED PARTNERS SLIDER */}
+      <div className="trusted-partners">
+        <h2 className="trusted-title">Our Trusted <span style={{ color: "#f5c542" }}>Partners</span></h2>
+        <div className="slider">
+          <div className="slide-track">
+            {[...partners, ...partners].map((item, index) => (
+              <div className="slide" key={index}>
+                <img src={item.img} alt="partner logo" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
     </section>

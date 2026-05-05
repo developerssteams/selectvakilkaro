@@ -1,5 +1,5 @@
 import React from "react";
-import "./LeadershipSlider.css";
+// import "./LeadershipSlider.css";
 
 const data = [
   {

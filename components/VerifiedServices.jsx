@@ -1,74 +1,71 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./VerifiedServices.css";
 
 const services = [
-  { title: "Company Registration", color: "red" },
-  { title: "GST Registration", color: "purple" },
-  { title: "Trademark Registration", color: "blue" },
-  { title: "FSSAI Registration", color: "navy" },
-  { title: "Company Registration", color: "lightblue" },
-  { title: "Trade License", color: "green" },
+  {
+    title: "Business Registration",
+    content: ["Private Limited Company Registration", "Limited Liability Partnership Registration", "One Person Company Registration", "Sole Proprietorship Registration", "Producer Company Registration", "Partnership Firm Registration", "Startup India Registration", "NGO Registration", "Fundraising for startup"],
+  },
+  {
+    title: "Licenses & Certificate",
+    content: ["GST Filing", "Income Tax Filing", "ROC Compliance"],
+  },
+  {
+    title: "Trademark  & IP",
+    content: ["Trademark Registration", "Copyright Registration", "Patent Registration", "IP Infringement", "Design Registration", "Free Legal Documents", "Business Contracts"],
+  },
+  {
+    title: "Legal & Compliance",
+    content: ["GST Registration", "Change Company Address", "Director Replacement", "Mandatory Annual Filings", "Labour Compliance", "Shop and Establishment License", "Accounting & Tax"],
+  },
 ];
 
 const VerifiedServices = () => {
-  const sliderRef = useRef(null);
-  let index = 0;
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-
-    const interval = setInterval(() => {
-      const cardWidth = slider.children[0].offsetWidth + 24;
-
-      index++;
-      if (index > services.length - 5) index = 0;
-
-      slider.scrollTo({
-        left: cardWidth * index,
-        behavior: "smooth",
-      });
-    }, 2800);
-
-    return () => clearInterval(interval);
-  }, []);
+  const [active, setActive] = useState(0);
 
   return (
     <section className="vs-section">
-      <div className="vs-header">
-        <div className="vs-header-top">
-          <h2>
-            Our <span>Verified Services</span>
-          </h2>
 
-          <span className="vs-header-icon">
-            <FiArrowUpRight />
-          </span>
-        </div>
+      <h1>Form Startup To Scale-Up-We Power Your Growth.</h1>
+      <p>All-in-one platform for online legal consultation,business incorporation,corporate compliance,and startup-friendly solutions- <br /> tailored for every industry.</p>
 
-        <p>
-          All-in-one platform for online legal consultation, business
-          incorporation, corporate compliance, and startup-friendly
-          solutions—tailored for every industry.
-        </p>
-      </div>
-
-      <div className="vs-slider" ref={sliderRef}>
+      {/* TOP CARDS */}
+      <div className="vs-top">
         {services.map((item, i) => (
-          <div className={`vs-card ${item.color}`} key={i}>
-            <div>
-              <h3>{item.title}</h3>
-              <p>Lorem Ipsum is simply dummy text</p>
-            </div>
-
-            <span className="vs-arrow">
+          <div
+            key={i}
+            className={`vs-top-card ${active === i ? "active" : ""}`}
+            onMouseEnter={() => setActive(i)}
+          >
+            <h3>{item.title}
+              <span className="vs-arrow">
               <FiArrowUpRight />
             </span>
-
+            </h3>
+            {/* <span className="vs-arrow">
+              <FiArrowUpRight />
+            </span> */}
           </div>
         ))}
       </div>
+
+      {/* BOTTOM PANEL */}
+      <div className="vs-bottom">
+        <div className="vs-bottom-left">
+          <p>✔ 100% Safety</p>
+          <p>✔ Fast Service</p>
+          <p>✔ Protected Documents</p>
+        </div>
+
+        <div className="vs-bottom-right">
+          {services[active].content.map((item, i) => (
+            <p key={i}>📄 {item}</p>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 };

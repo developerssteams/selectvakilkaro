@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "./Testimonials.css";
+// import "./Testimonials.css";
 
 const testimonials = [
   {

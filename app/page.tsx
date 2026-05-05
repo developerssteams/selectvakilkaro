@@ -16,17 +16,19 @@ import TawkTo from "@/components/TawkTo";
 import Footer from "@/components/Footer";
 import "../app/globals.css";
 import Header from "@/components/Header";
+import ITRSteps from "@/components/Steps";
 export default function Home() {
   return (
     <>
       <Header />
       <Navbar />
+      <ITRSteps />
       <VerifiedServices />
       <LegalRepresentation />
-      <News />
-      <Partner />
       <Journey />
-      <Story />
+      <Partner />
+      <News />
+      {/* <Story /> */}
       <WhyVakilkaro />
       <CallToAction />
       <VakilKaroWay />

@@ -1,259 +1,168 @@
-/* ===================== JOURNEY TIMELINE ===================== */
-.journey-wrap {
-  min-height: 100vh;
-  padding: 100px 80px;
+/* Main section - overflow visible hona chahiye */
+.support-section {
+  padding: 100px 20px 80px 20px;
+  /* top padding badhaya taki image cut na ho */
   display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 50px;
+  justify-content: center;
+  overflow-x: clip;
+  /* side se cut nahi hoga */
+  overflow-y: visible;
 }
 
-.journey-heading {
-  position: sticky;
-  top: 200px;
-  font-size: 80px !important;
-  font-weight: 500 !important;
-  text-align: center;
-
-  color: rgba(255, 255, 255, 0.06);
-  /* light behind effect */
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* MAIN CARD */
-.journey-card {
-  width: 520px;
-  height: 260px;
-  border-radius: 20px;
-  padding: 26px 30px;
-  position: relative;
-  color: #fff;
-  overflow: hidden;
+/* layout */
+.card-wrap {
   display: flex;
-  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: visible;
+  /* IMPORTANT - children bahar ja sakte hain */
 }
 
-/* ================= SCROLL EFFECT ================= */
-/* ================= HEADING ================= */
-
-.journey-wrap {
+/* card main */
+.card {
+  width: 360px;
+  /* height: 450px; */
+  background: #eaeaea;
+  border-radius: 30px;
   position: relative;
+  padding-top: 230px;
+  /* kam kiya taaki image zyada bahar na nikle */
+  overflow: visible;
+  /* image card ke bahar dikhegi */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
 }
 
-/* 🔥 Sticky Heading */
-.journey-heading {
-  position: sticky;
-  top: 80px;
-  font-size: 120px;
-  font-weight: 800;
-  text-align: center;
-  color: white;
-  z-index: 0;
-  pointer-events: none;
+/* hover pe card thoda upar */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
 }
 
-/* ================= SCROLL EFFECT ================= */
-
-.scroll-box {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.scroll-content {
+/* image wrapper - overlap */
+.card-img-wrapper {
   position: absolute;
-  inset: 0;
-  padding: 26px 30px;
-  display: flex;
-  align-items: flex-end;
-  transition: transform 0.6s ease, opacity 0.4s ease;
-}
-
-/* DEFAULT */
-.scroll-content.default {
-  transform: translateY(0%);
-  z-index: 2;
-}
-
-/* HOVER */
-.scroll-content.hover {
-  transform: translateY(100%);
-  z-index: 1;
-
-  display: flex;
-  align-items: flex-end;
-}
-
-/* ANIMATION */
-.journey-card:hover .scroll-content.default {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.journey-card:hover .scroll-content.hover {
-  transform: translateY(0%);
-  opacity: 1;
-}
-
-/* FIX ALIGNMENT */
-.scroll-content .year {
-  position: absolute;
-  top: 10px;
-  right: 26px;
-}
-
-/* hover text */
-.hover-text {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* CARDS ABOVE HEADING */
-.journey-card {
-  position: relative;
-  z-index: 2;
-}
-
-/* FOLDER TAB */
-.journey-card::before {
-  content: "";
-  position: absolute;
-  top: -22px;
+  top: -40px;
+  /* kam kiya -70 se -60 taki zyada bahar na nikle */
   left: 0;
-  width: 180px;
-  height: 44px;
-  border-radius: 16px 16px 0 0;
-  background: inherit;
+  width: 100%;
+  padding: 0 20px;
+  transition: top 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  z-index: 10;
+  overflow: visible;
 }
 
-
-/* WAVE LINE */
-.journey-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'%3E%3Cpath d='M0 140 C120 40 260 240 400 140 480 80 560 200 600 160' stroke='rgba(255,255,255,0.18)' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: cover;
-  pointer-events: none;
-}
-
-/* YEAR */
-.year {
-  position: absolute;
-  top: 10px;
-  right: 26px;
-  font-size: 56px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-/* CONTENT */
-.content {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-/* VERTICAL LINE */
-.v-line {
-  width: 3px;
-  height: 60px;
-  background: #fff;
-  border-radius: 2px;
-}
-
-/* IMAGE */
-.journey-img {
-  width: 230px;
-  height: 140px;
+/* image styling - height kam kiya */
+.card-img-wrapper img {
+  width: 100%;
+  height: 300px;
+  /* 300px se kam kiya 200px */
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border-radius: 30px;
+  display: block;
+  transition: transform 0.35s ease, box-shadow 0.3s ease;
 }
 
-/* ALIGNMENT */
-.left {
-  align-self: flex-start;
+/* 🔥 HOVER EFFECT - image upar jayegi */
+.card:hover .card-img-wrapper {
+  top: -80px;
+  /* -60 se -80 matlab 20px upar */
 }
 
-.right {
-  align-self: flex-end;
+/* image thoda scale */
+.card:hover .card-img-wrapper img {
+  transform: scale(1.02);
 }
 
-/* .right .content {
-  flex-direction: row-reverse;
-} */
-
-/* COLORS */
-.blue {
-  background: #2d32e8;
+/* content styling - background ensure */
+.card-content {
+  padding: 25px;
+  background: #eaeaea;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* content apne andar rahe */
 }
 
-.red {
-  background: #e11d2e;
+.card-content h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1a1a1a;
 }
 
-.purple {
-  background: #6f2cf4;
+.card-content p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-.green {
-  background: #18b978;
+/* button */
+.card-content button {
+  background: #1e1b4b;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.orange {
-  background: #f08c28;
+.card-content button:hover {
+  background: #2d2a5e;
+  transform: scale(0.97);
 }
 
-.cyan {
-  background: #1abed6;
-}
-
-.pink {
-  background: #e84393;
-}
-
-.yellow {
-  background: #f1c40f;
-  color: #000;
-}
-
-.teal {
-  background: #009688;
-}
-
-/* ===================== MOBILE ===================== */
+/* responsive */
 @media (max-width: 768px) {
-  .journey-wrap {
-    padding: 60px 20px;
-    gap: 80px;
+  .support-section {
+    padding: 80px 16px 60px 16px;
   }
 
-  .journey-card {
+  .card {
     width: 100%;
-    height: 240px;
-    align-self: center !important;
+    max-width: 350px;
+    padding-top: 80px;
   }
 
-  .year {
-    font-size: 42px;
+  .card-img-wrapper {
+    top: -50px;
   }
 
-  .journey-img {
-    width: 180px;
-    height: 120px;
+  .card:hover .card-img-wrapper {
+    top: -65px;
   }
 
-  .content {
-    bottom: 24px;
-    left: 20px;
+  .card-img-wrapper img {
+    height: 180px;
   }
 
-  .right .content {
-    right: 20px;
+  .card-wrap {
+    gap: 40px;
+  }
+}
+
+/* Extra large screens ke liye */
+@media (min-width: 1400px) {
+  .support-section {
+    padding: 120px 20px 80px 20px;
+  }
+
+  .card-img-wrapper img {
+    height: 220px;
+  }
+
+  .card-img-wrapper {
+    top: -70px;
+  }
+
+  .card:hover .card-img-wrapper {
+    top: -90px;
   }
 }

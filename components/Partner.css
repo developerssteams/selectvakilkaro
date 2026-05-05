@@ -1,148 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 .partner-section {
-  padding: 45px 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding:  40px 20px;
   font-family: "Poppins", sans-serif;
 }
 
-/* ================= HERO ================= */
-.partner-hero {
-  max-width: 900px;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 90px;
+.partner-section h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
-.partner-hero h3 {
-  font-size: 28px;
-  font-weight: 400;
-  opacity: 0.8;
+/* container */
+.partner-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.partner-hero h1 {
-  font-size: 40px;
-  font-weight: 700;
-  margin: 10px 0 20px;
-  font-family: 'poppins', sans-serif;
+/* card */
+.partner-card {
+  background: #ffffff0d;
+  padding: 25px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: left;
+  transition: 0.3s;
+  border: 1px solid #f5a623;
 }
 
-.partner-hero p {
-  font-size: 18px;
-  opacity: 0.75;
-  line-height: 1.6;
-  font-family: 'poppins', sans-serif;
+.partner-card:hover {
+  transform: translateY(-8px);
 }
 
-.hero-btnn {
-  margin-top: 30px;
-  background: white;
-  color: black;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.btn-icon {
+/* user */
+.partner-user {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: #f2f2f2; /* light gray circle */
-   border: 1px solid black;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.partner-user img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+}
+
+.partner-user h3 {
   font-size: 16px;
-}
-/* ================= IMAGE LAYOUT ================= */
-
-/* .partner-wrapper {
-  width: 50%;
-  max-width: 200px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  align-items: center;
-} */
- .partner-wrapper {
-  width: 100%;
-  max-width: 1200px; /* ya hata bhi sakta hai */
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap; /* important */
+  margin: 0;
+  color: white;
 }
 
-/* COLUMNS */
-.col {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* rating */
+.partner-rating {
+  color: #f5a623;
+  font-size: 14px;
 }
 
-/* IMAGE CARD */
-.card {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+/* text */
+.partner-text {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.5;
+  color: white;
 }
 
-/* VARIATIONS */
-.card.tall {
-  height: 200px;
-}
-
-.card.big {
-  width: 140px;
-  height: 200px;
-}
-
-/* COLUMN OFFSETS (to create floating look like screenshot) */
-.c1 {
-  transform: translateY(-40px);
-}
-
-.c2 {
-  transform: translateY(30px);
-}
-
-.c3 {
-  transform: translateY(-10px);
-}
-
-.c4 {
-  transform: translateY(40px);
-}
-
-.c5 {
-  transform: translateY(-20px);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1200px) {
-  .partner-wrapper {
-    transform: scale(0.9);
+/* responsive */
+@media (max-width: 768px) {
+  .partner-section h1 {
+    font-size: 26px;
   }
 
-  .partner-hero h1 {
-    font-size: 48px;
-  }
-}
-
-@media (max-width: 992px) {
-  .partner-wrapper {
-    flex-wrap: wrap;
+  .partner-card {
+    width: 100%;
+    max-width: 350px;
   }
 }

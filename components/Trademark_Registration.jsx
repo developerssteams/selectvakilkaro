@@ -1,5 +1,4 @@
-import "./Trademark_Registration.css";
-// import ctaImg from "../assets/Banner.png";
+// import "./Trademark_Registration.css";
 import { FiCheckCircle } from "react-icons/fi";
 import { FaUserTie, FaIdCard, FaCogs } from "react-icons/fa";
 

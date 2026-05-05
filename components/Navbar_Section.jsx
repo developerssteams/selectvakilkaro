@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar_Section.css";
+import Link from "next/link";
 
 function Navbar_Section() {
 
     const [activeMenu, setActiveMenu] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // ✅ Detect device
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    const handleMenu = (menu) => {
+        if (isMobile) {
+            setActiveMenu(activeMenu === menu ? null : menu);
+        }
+    };
 
     return (
         <section className="category-section">
@@ -11,16 +31,72 @@ function Navbar_Section() {
 
                 {/* NAV ITEMS */}
                 <ul className="category-list">
-                    <li onMouseEnter={() => setActiveMenu("registration")}>Registrations</li>
-                    <li onMouseEnter={() => setActiveMenu("license")}>License/Certificate</li>
-                    <li onMouseEnter={() => setActiveMenu("ip")}>IP & Trademark</li>
-                    <li onMouseEnter={() => setActiveMenu("tax")}>Income Tax Filing</li>
-                    <li onMouseEnter={() => setActiveMenu("gst")}>GST Filing</li>
-                    <li onMouseEnter={() => setActiveMenu("roc")}>ROC & Compliance</li>
-                    <li onMouseEnter={() => setActiveMenu("funding")}>Funding/IPO</li>
-                    <li onMouseEnter={() => setActiveMenu("legal")}>Legal Drafting & Notices</li>
-                </ul>
 
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("registration")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("registration")}
+                    >
+                        Registrations
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("license")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("license")}
+                    >
+                        License/Certificate
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("ip")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("ip")}
+                    >
+                        IP & Trademark
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("tax")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("tax")}
+                    >
+                        Income Tax Filing
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("gst")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("gst")}
+                    >
+                        GST Filing
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("roc")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("roc")}
+                    >
+                        ROC & Compliance
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("funding")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("funding")}
+                    >
+                        Funding/IPO
+                    </li>
+
+                    <li
+                        onMouseEnter={() => !isMobile && setActiveMenu("legal")}
+                        onMouseLeave={() => !isMobile && setActiveMenu(null)}
+                        onClick={() => handleMenu("legal")}
+                    >
+                        Legal Drafting & Notices
+                    </li>
+
+                </ul>
                 {/* 🔥 SINGLE MEGA MENU */}
                 {activeMenu && (
                     <div
@@ -33,7 +109,9 @@ function Navbar_Section() {
                             <div className="menu-left">
 
                                 <div className="menu-column">
-                                    <p >Startup Registration</p>
+                                    <Link href="/Startupregistration">
+                                        <p>Startup Registration</p>
+                                    </Link>
                                     <p>Private Limited Company</p>
                                     <p>Limited Liability Partnership</p>
                                     <p>One Person Company</p>
@@ -152,10 +230,7 @@ function Navbar_Section() {
                                 <div className="menu-column">
                                     <p>Patent Registration</p>
                                     <p>Logo Design</p>
-
                                 </div>
-
-
                             </div>
                         )}
                         {activeMenu === "tax" && (
@@ -339,9 +414,6 @@ function Navbar_Section() {
                                 </div>
                             </div>
                         )}
-
-                        {/* baki bhi same pattern se add kar lena */}
-
                     </div>
                 )}
 

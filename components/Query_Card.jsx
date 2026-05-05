@@ -1,12 +1,19 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import "./Query_Card.css";
+// import "./Query_Card.css";
 
 
 const cards = [
   {
     title: "Business Launchpad (Registration & Startups)",
     tabs: [
-      { name: "Pvt Ltd", link: "/business/page.tsx", video: "https://www.youtube.com/embed/1hHMwLxN6EM" },
+      {
+        name: "Pvt Ltd",
+        link: "/business",
+        video: "https://www.youtube.com/embed/1hHMwLxN6EM"
+      },
+
       { name: "LLP", video: "https://www.youtube.com/embed/tgbNymZ7vqY" },
       { name: "OPC", video: "https://www.youtube.com/embed/ysz5S6PUM-U" },
       { name: "Partnership", video: "https://www.youtube.com/embed/jNQXAC9IVRw" },
@@ -69,45 +76,25 @@ const cards = [
   }
 ];
 
+
 const Query_Card = () => {
+  const router = useRouter();
+
   const [active, setActive] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [animating, setAnimating] = useState(false);
 
   const wrapperRef = useRef(null);
 
-  // body scroll control
-  const handleWheel = (e) => {
-    const isAtLastCard = active === cards.length - 1;
-    const isScrollingDown = e.deltaY > 0;
-    const isScrollingUp = e.deltaY < 0;
+  // 🔥 active card change hone pe tab reset
+  useEffect(() => {
+    setActiveTab(0);
+  }, [active]);
 
-    // 🔥 only prevent scroll inside card area
-    if (
-      (!isAtLastCard && isScrollingDown) ||
-      (active > 0 && isScrollingUp)
-    ) {
-      e.preventDefault();
-
-      if (animating) return;
-
-      if (isScrollingDown && active < cards.length - 1) {
-        setAnimating(true);
-        setActive((prev) => prev + 1);
-        setTimeout(() => setAnimating(false), 500);
-      }
-
-      if (isScrollingUp && active > 0) {
-        setAnimating(true);
-        setActive((prev) => prev - 1);
-        setTimeout(() => setAnimating(false), 500);
-      }
-    }
-  };
-
-  // 🔥 FIXED WHEEL EVENT
   useEffect(() => {
     const wrapper = wrapperRef.current;
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) return;
 
     const handleWheel = (e) => {
       e.preventDefault();
@@ -160,11 +147,17 @@ const Query_Card = () => {
                 <div className="tabs">
                   {item.tabs.map((tab, i) => (
                     <button
+                      type="button"   // 🔥 IMPORTANT FIX
                       key={i}
                       className={activeTab === i ? "active-tab" : ""}
                       onClick={(e) => {
-                        e.stopPropagation(); // scroll block
-                        setActiveTab(i);
+                        e.stopPropagation();
+
+                        if (tab.link) {
+                          router.push(tab.link); // 🔥 PAGE OPEN
+                        } else {
+                          setActiveTab(i);
+                        }
                       }}
                     >
                       {tab.name}
@@ -178,7 +171,7 @@ const Query_Card = () => {
                   <input type="email" placeholder="Email Address" />
                   <input type="text" placeholder="Phone Number" />
 
-                  <button className="submit-btn-query">
+                  <button type="button" className="submit-btn-query">
                     Submit Your Query
                   </button>
                 </div>
@@ -197,10 +190,10 @@ const Query_Card = () => {
 
       <br />
 
-      {/* VIDEO */}
       <div className="video-section">
         <iframe
-          src={cards[active].tabs[activeTab].video}
+
+          src={cards?.[active]?.tabs?.[activeTab]?.video || ''}
           title="video"
           frameBorder="0"
           allowFullScreen

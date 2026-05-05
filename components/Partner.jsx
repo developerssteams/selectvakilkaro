@@ -1,59 +1,48 @@
 import "./Partner.css";
+
+const testimonials = [
+  {
+    name: "Dr. Luqman Khan",
+    rating: 4,
+    text: "I am the partner of the Medrix Records Management Services LLP and working with Ujjwal. Our experience is very good and would like to continue in future.",
+    img: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    name: "Ajayraj Infratech Pvt. Ltd.",
+    rating: 4,
+    text: "All team members are very helpful and experienced. Filing GST & other compliances was smooth and well managed.",
+    img: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+  {
+    name: "Seshasayana Reddy",
+    rating: 5,
+    text: "They provide seamless service and support. GST filings and compliance were handled with least follow-ups.",
+    img: "https://randomuser.me/api/portraits/men/50.jpg",
+  },
+];
+
 const Partner = () => {
   return (
     <section className="partner-section">
+      <h1>Testimonials That Speak for Us</h1>
 
-      {/* ===== TOP TEXT ===== */}
-      <div className="partner-hero">
-        <h3>Meet Premier</h3>
-        <h1>Experts in Law & Finance</h1>
-        <p>
-          Finding the right advisor shouldn't be a challenge. We have hand-selected 10 of the most
-          distinguished CA, CS, and Legal professionals to lead our most critical assignments.
-        </p>
+      <div className="partner-container">
+        {testimonials.map((item, index) => (
+          <div className="partner-card" key={index}>
+            <div className="partner-user">
+              <img src={item.img} alt="user" />
+              <div>
+                <h3>{item.name}</h3>
+                <p className="partner-rating">
+                  {"★".repeat(item.rating)}
+                  {"☆".repeat(5 - item.rating)} {item.rating}/5
+                </p>
+              </div>
+            </div>
 
-        <button className="hero-btnn">
-          <span className="btn-text">Direct & Fast</span>
-          <span className="btn-icon">↗</span>
-        </button>
-
-      </div>
-
-      {/* ===== IMAGE AREA ===== */}
-      <div className="partner-wrapper">
-
-        <div className="col c1">
-         <img src="/partner/Rectangle740.png" className="card big" />
-         <img src="/partner/Rectangle741.png" className="card big" />
-        </div>
-
-        <div className="col c2">
-          <img src="/partner/Rectangle742.png" className="card big" />
-          <img src="/partner/Rectangle743.png" className="card big" />
-          
-        </div>
-
-        <div className="col">
-          <img src="/partner/Rectangle744.png" className="card big" />
-        </div>
-        <div className="col c1">
-          <img src="/partner/Rectangle745.png" className="card big" />
-        </div>
-        <div className="col">
-          <img src="/partner/Rectangle746.png" className="card big" />
-        </div>
-
-        <div className="col c4">
-          <img src="/partner/Rectangle747.png" className="card big" />
-          <img src="/partner/Rectangle748.png" className="card big" />
-        </div>
-
-        <div className="col c5">
-         <img src="/partner/Rectangle749.png" className="card big" />
-         <img src="/partner/Rectangle750.png" className="card big" />
-         
-        </div>
-
+            <p className="partner-text">{item.text}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

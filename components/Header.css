@@ -1,58 +1,10 @@
-@import "tailwindcss";
-
-:root {
-    --background: #212121;
-    --foreground: #171717;
-    --H1: white;
-    --H3: white;
-    --Font-Poppins: 'Poppins', sans-serif;
-    --P: white;
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
-}
-
-
-body {
-    background: var(--background) !important;
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h1 {
-    color: var(--H1);
-}
-
-h3 {
-    color: var(--H3);
-}
-
-p {
-    color: var(--P);
-}
-
-/* body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-        background-color: #212121;
-        
-} */
-
-
-
 /* ================= HEADER ================= */
+
 .rk-header {
     width: 100%;
     background: #000;
     position: fixed;
-    top: 10px;
+    top: 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -73,19 +25,12 @@ p {
     width: 120px;
 }
 
-/* ================= DESKTOP NAVIGATION ================= */
+/* ================= DESKTOP NAV ================= */
 .rk-nav-desktop {
     display: flex;
     align-items: center;
     gap: 26px;
 }
-
-.rk-right-desktop {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
 
 .rk-nav-desktop a {
     color: #eaeaea;
@@ -96,48 +41,22 @@ p {
 
 .rk-nav-desktop a:hover {
     color: #fff;
-
-
 }
-
-.pill-btn a {
-    padding: 4px 18px;
-    background: #fff;
-    color: #000;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* 
-.pill-btn a:hover {
-    background: #f2f2f2;
-} */
-
 
 .rk-menu-item.pill-btn a {
-    display: inline-block;
-    padding: 5px 15px;
+    padding: 6px 16px;
     border-radius: 30px;
-    background: #ffffff;
+    background: #fff;
     color: #000;
-    border: 2px solid transparent;
     font-weight: 500;
-
-    transition: all 0.35s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/*
-.rk-menu-item.pill-btn a:hover {
-    border: 2px solid black;
-    color: black;
-    
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25);
-} */
-
+/* ================= RIGHT ================= */
+.rk-right-desktop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
 .rk-search-box {
     display: flex;
@@ -168,34 +87,71 @@ p {
     border-radius: 12px;
     font-size: 14px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .rk-login-btn:hover {
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* ================= MOBILE TOGGLE ================= */
-
-.rk-toggle {
-    display: none;
-    position: fixed;
-    top: 15px;
+/* ================= IMPROVED TOGGLE BUTTON ================= */
+.rk-toggle-btn {
+    position: absolute;
     right: 15px;
-    z-index: 1001;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3000;
+    display: none;
+   background: rgba(255, 255, 255, 0.1);  /* 🔥 light background for visibility */
+    border: 1px solid rgba(255, 255, 255, 0.3);  /* 🔥 border for contrast */
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    padding: 10px;
+    width: 60px;
+    height: 44px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+   
 }
 
-
-.rk-toggle i {
-    color: #fff !important;
-    font-size: 28px;
+.rk-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
+.toggle-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    margin: 0 auto;
+}
 
-/* ================= MOBILE SLIDE MENU ================= */
+.toggle-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+/* Animated hamburger to close icon */
+.rk-toggle-btn.active .toggle-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.rk-toggle-btn.active .toggle-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.rk-toggle-btn.active .toggle-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ================= MOBILE MENU ================= */
 .rk-mobile-menu {
     position: fixed;
     top: 0;
@@ -203,11 +159,10 @@ p {
     width: 300px;
     height: 100vh;
     background: #000;
-    z-index: 999;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.6);
     overflow-y: auto;
-    padding-top: 60px;
 }
 
 .rk-mobile-menu.open {
@@ -215,7 +170,7 @@ p {
 }
 
 .mobile-menu-content {
-    padding: 80px 30px 30px;
+    padding: 80px 25px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -230,44 +185,43 @@ p {
 .rk-nav-mobile a {
     color: #eaeaea;
     font-size: 16px;
-    font-weight: 500;
     text-decoration: none;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
 }
 
 .rk-nav-mobile a:hover {
     color: #fff;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
+/* ================= MOBILE SEARCH ================= */
 .mobile-search-box {
     display: flex;
     align-items: center;
     border-bottom: 2px solid #555;
     padding-bottom: 8px;
-    margin-bottom: 10px;
 }
 
 .mobile-search-box .rk-search-input {
     width: 100%;
-    font-size: 14px;
 }
 
+/* ================= BUTTON ================= */
 .mobile-login-btn {
-    margin-top: 20px;
     width: 100%;
 }
 
+/* ================= OVERLAY ================= */
 .menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
+    background: rgba(0,0,0,0.7);
+    z-index: 1500;
     animation: fadeIn 0.3s ease;
 }
 
@@ -275,206 +229,29 @@ p {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
 
-/* ================= HERO SECTION ================= */
-.header-section {
-    min-height: 100vh;
-    background: url("/hero-bg.png") center/cover no-repeat;
-    color: #fff;
-    padding-top: 70px;
-}
-
-.hero-title {
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 16px;
-    color: #d1d1d1;
-    max-width: 720px;
-    margin: 15px auto;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 50px;
-}
-
-.hero-btn {
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-size: 14px;
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.hero-btn.primary {
-    border: 1px solid #f5c542;
-    color: white;
-    background-color: #000;
-}
-
-.hero-btn.primary:hover {
-    background: #f5c542;
-    color: #000;
-}
-
-.hero-btn.secondary {
-    border: 1px solid white;
-    color: #fff;
-    background-color: black;
-}
-
-.hero-btn.secondary:hover {
-    border-color: #fff;
-}
-
-.hero-stats {
-    margin-top: 60px;
-}
-
-.stats-text {
-    font-size: 13px;
-    color: #dcdcdc;
-    line-height: 1.6;
-}
-
-.stat-box {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-    padding: 10px;
-    transition: 0.3s;
-    width: 154px;
-    text-align: left;
-    padding-left: 10px;
-
-
-}
-
-.stat-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-}
-
-.stat-box h3 {
-    font-size: 32px;
-    font-weight: 700;
-
-}
-
-.stat-box p {
-    font-size: 13px;
-    color: #cfcfcf;
-}
-
-/* ================= RESPONSIVE DESIGN ================= */
-
-/* TABLET (768px - 991px) */
-@media (max-width: 991px) {
-    .hero-title {
-        font-size: 40px;
-    }
-
-    .rk-nav-desktop {
-        gap: 16px;
-    }
-
-    .rk-nav-desktop a {
-        font-size: 12px;
-    }
-
-    .rk-search-box {
-        display: none;
-    }
-}
-
-
-/* MOBILE (0px - 767px) */
-
+/* ================= RESPONSIVE ================= */
 @media (max-width: 767px) {
-
-    /* Hide desktop elements */
     .rk-nav-desktop,
     .rk-right-desktop {
         display: none !important;
     }
 
-    /* Show toggle button */
-    .rk-toggle {
-        display: block !important;
-        color: #fff;
+    .rk-toggle-btn {
         display: flex !important;
-    }
-
-    .hero-title {
-        font-size: 34px;
-    }
-
-    .hero-stats .col-md-3 {
-        margin-bottom: 30px;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-
-/* SMALL MOBILE (0px - 576px) */
+/* SMALL MOBILE */
 @media (max-width: 576px) {
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-        padding: 0 15px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .hero-btn {
-        width: 200px;
-        text-align: center;
-    }
-
-    .hero-stats {
-        margin-top: 40px;
-    }
-
-    .stats-text {
-        font-size: 13px;
-        margin-bottom: 25px;
-    }
-
-    .stat-box {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-
-    .stat-box h3 {
-        font-size: 28px;
-    }
-
-    /* Adjust mobile menu width for small screens */
     .rk-mobile-menu {
         width: 85%;
-        max-width: 300px;
-    }
-
-    .mobile-menu-content {
-        padding: 70px 20px 20px;
     }
 
     .rk-box {
@@ -483,5 +260,10 @@ p {
 
     .rk-logo {
         width: 100px;
+    }
+
+    .rk-toggle-btn {
+        width: 40px;
+        height: 40px;
     }
 }

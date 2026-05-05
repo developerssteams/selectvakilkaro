@@ -1,5 +1,5 @@
 import React from "react";
-import "./News.css";
+// import "./News.css";
 
 const data = [
     {
