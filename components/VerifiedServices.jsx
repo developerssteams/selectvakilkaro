@@ -28,7 +28,7 @@ const VerifiedServices = () => {
   return (
     <section className="vs-section">
 
-      <h1>Form Startup To Scale-Up-We Power Your Growth.</h1>
+      <h1>Form Startup To Scale-Up-We Power Your <span style={{color:"#f5c542"}} > Growth</span>.</h1>
       <p>All-in-one platform for online legal consultation,business incorporation,corporate compliance,and startup-friendly solutions- <br /> tailored for every industry.</p>
 
       {/* TOP CARDS */}

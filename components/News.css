@@ -1,27 +1,31 @@
 .news-section {
   color: #fff;
-   
+  padding: 60px 35px;
+  /* background: radial-gradient(circle at top, #1a2238, #0b0f1a); */
 }
 
 /* HEADING */
 .news-heading {
   max-width: 1200px;
   margin: auto;
-  
 }
 
 .news-heading h2 {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 .news-heading span {
   font-weight: 700;
+  color: #f5c542;
+  text-shadow: 0 0 10px rgba(245, 197, 66, 0.4);
 }
 
 .news-heading p {
-  margin-top: 10px;
-  color: #aaa;
+  margin-top: 12px;
+  /* color: #9ca3af; */
+  color: white;
   max-width: 650px;
   font-size: 14px;
 }
@@ -29,23 +33,44 @@
 /* GRID */
 .news-grid {
   max-width: 1200px;
-  margin: auto;
-  /* padding: 0 20px; */
+  margin: 50px auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 30px;
+
 }
 
 /* CARD */
 .news-card {
-  background: linear-gradient(180deg, #2a2a2a, #1c1c1c);
-  border-radius: 5px;
+  border-radius: 16px;
   overflow: hidden;
-  transition: 0.3s;
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
 }
 
+/* GLOW BORDER EFFECT */
+.news-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, #f5c542, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.news-card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
 .news-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 /* IMAGE */
@@ -54,64 +79,79 @@
   overflow: hidden;
 }
 
+/* DARK OVERLAY (PREMIUM FEEL) */
+.news-img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
 .news-img-wrapper img {
   width: 100%;
-  height: 200px;
+  height: 230px;
   object-fit: cover;
-  display: block;
+  transition: 0.5s ease;
+}
+
+.news-card:hover img {
+  transform: scale(1.15) rotate(1deg);
 }
 
 /* DATE */
 .news-date {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #fff;
+  top: 14px;
+  left: 14px;
+  background: rgba(245, 197, 66, 0.95);
   color: #000;
   font-size: 11px;
-  padding: 6px 8px;
-  border-radius: 6px;
-  font-weight: 600;
+  padding: 6px 9px;
+  border-radius: 8px;
+  font-weight: 700;
   text-align: center;
-}
-
-/* LOGO */
-.news-logo {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 45px;  
-  height: 45px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 50%;
-  padding: 5px;
+  box-shadow: 0 5px 15px rgba(245, 197, 66, 0.5);
 }
 
 /* CONTENT */
 .news-content {
-  padding: 18px;
-  background-color: #3F3F3F;
+  padding: 20px;
+  position: relative;
 }
 
 .news-content h3 {
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.news-card:hover .news-content h3 {
+  color: #f5c542;
 }
 
 .news-content p {
   font-size: 13px;
-  color: #bbb;
-  margin-bottom: 12px;
+  color: #b0b0b0;
+  margin-bottom: 14px;
+  line-height: 1.6;
 }
 
-/* READ MORE */
+/* READ MORE BUTTON STYLE */
 .news-read {
-  color: #f5c518;
-  font-size: 13px;
-  cursor: pointer;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #f5c542;
+  border: 1px solid rgba(245, 197, 66, 0.4);
+  transition: 0.3s;
 }
 
+.news-read:hover {
+  background: #f5c542;
+  color: #000;
+  box-shadow: 0 0 15px rgba(245, 197, 66, 0.6);
+}
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -120,7 +160,7 @@
   }
 
   .news-heading h2 {
-    font-size: 34px;
+    font-size: 36px;
   }
 }
 
@@ -136,33 +176,5 @@
 
   .news-heading h2 {
     font-size: 28px;
-  }
-
-  .news-heading p {
-    font-size: 13px;
-    margin: 10px auto;
-  }
-
-  .news-img-wrapper img {
-    height: 180px;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .news-heading h2 {
-    font-size: 24px;
-  }
-
-  .news-content {
-    padding: 14px;
-  }
-
-  .news-content h3 {
-    font-size: 15px;
-  }
-
-  .news-content p {
-    font-size: 12px;
   }
 }

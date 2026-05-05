@@ -48,7 +48,7 @@ const LeadershipSection = () => {
 
             {/* TEXT BELOW IMAGE */}
             <div className="leadership-content">
-              <span className="tag">Lorem Ipsum is not simply random</span>
+              {/* <span className="tag">Lorem Ipsum is not simply random</span> */}
 
               <h3>{item.title}</h3>
 
