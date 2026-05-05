@@ -5,7 +5,6 @@ const services = [
   {
     title: "Lawyers",
     desc: "For contracts, notices, and litigation support.",
-    // img: "https://images.unsplash.com/photo-1556157382-97eda2f9e2bf",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
 
     tag: "205+ Lawyers",
