@@ -26,8 +26,8 @@ export default function Home() {
       <VerifiedServices />
       <LegalRepresentation />
       <Journey />
-      <Partner />
       <News />
+      <Partner />
       {/* <Story /> */}
       {/* <WhyVakilkaro /> */}
       {/* <CallToAction /> */}

@@ -28,7 +28,6 @@ const services = [
 const Journey = () => {
   return (
     <section className="support-section">
-      {/* <h1>Professional Support on <span style:color:blue; > Demand</span></h1> */}
       <h1>
         Professional Support on{" "}
         <span>Demand</span>

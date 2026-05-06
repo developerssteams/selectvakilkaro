@@ -421,7 +421,7 @@ body {
   background: var(--background) !important;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  
+
 }
 
 h1 {
@@ -646,11 +646,13 @@ p {
 }
 
 /* highlight numbers */
-.highlight {
+
+
+/* .highlight {
   color: #ff7a00;
   font-weight: 600;
   margin-right: 5px;
-}
+} */
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 991px) {

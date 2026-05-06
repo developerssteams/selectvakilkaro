@@ -38,12 +38,14 @@
 /* TITLE */
 .itr-header h2 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .itr-header h2 span {
     color: #f5c542;
+     font-weight: 700; /* last text bold */
 }
+
 
 /* BADGE */
 .badge {

@@ -3,9 +3,16 @@
   color: #fff;
 }
 
+
 .hhh {
   text-align: center;
   margin-bottom: 15px;
+  font-weight: 500px;
+}
+
+.highlightt {
+  font-weight: 700;
+  color: #f5c542;
 }
 
 /* TOP ROW */
@@ -35,7 +42,7 @@
 
 .vs-top-card.active {
   background: #ffffff0f;
-  
+
   border-color: #f5c542;
 }
 

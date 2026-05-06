@@ -27,10 +27,10 @@ const VerifiedServices = () => {
 
   return (
     <section className="vs-section">
-      <h1 className="hhh">
+      <h2 className="hhh">
         From Startup to Scale-Up — We Power Your
-        <span className="highlight"> Growth</span>
-      </h1>
+        <span className="highlightt"> Growth</span>
+      </h2>
 
       <p className="hhh">
         All-in-one platform for legal consultation, business setup, and compliance solutions.

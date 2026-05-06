@@ -29,15 +29,18 @@
 
 .why-top {
   display: flex;
-  flex-direction: column; /* 🔥 ye main fix hai */
-  align-items: center;   /* center horizontally */
+  flex-direction: column;
+  /* 🔥 ye main fix hai */
+  align-items: center;
+  /* center horizontally */
   text-align: center;
 }
 
 .why-top h1 {
   font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 8px; /* gap control */
+  font-weight: 300;
+  margin-bottom: 8px;
+  /* gap control */
   line-height: 1.2;
 }
 
@@ -262,7 +265,7 @@
 
 .trusted-title {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 40px;
   color: #ffffff;
   text-align: center;
@@ -272,6 +275,7 @@
 /* SLIDER */
 .slider {
   overflow: hidden;
+
 }
 
 .slide-track {
@@ -291,6 +295,7 @@
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: 0.3s;
+  margin-top: 10px;
 }
 
 .slide img {

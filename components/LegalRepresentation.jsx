@@ -82,7 +82,7 @@ const LegalRepresentation = () => {
       {/* HEADER */}
       <div className="why-top">
         <h1>
-          Why Thousands Trust <span style={{ color: "#f5c542" }}>VakilKaro</span> ?
+          Why Thousands Trust <span style={{ color: "#f5c542", fontWeight: "700" }}>VakilKaro</span> ?
         </h1>
         <p>
           Choose Vakilkaro for unmatched legal expertise, premium experience and a
