@@ -30,7 +30,7 @@ function Header() {
 
     return (
         <>
-           
+
 
             <header className="rk-header">
                 <div className="rk-box">
@@ -67,8 +67,8 @@ function Header() {
                     </div>
 
                     {/* Toggle Button - IMPROVED VERSION */}
-                    <button 
-                        className={`rk-toggle-btn ${menuOpen ? "active" : ""}`} 
+                    <button
+                        className={`rk-toggle-btn ${menuOpen ? "active" : ""}`}
                         onClick={toggleMenu}
                         aria-label="Toggle Menu"
                     >
@@ -110,8 +110,8 @@ function Header() {
                 {/* Overlay */}
                 {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
             </header>
-            
-            
+
+
         </>
     );
 }

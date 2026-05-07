@@ -34,7 +34,7 @@ export default function Home() {
       {/* <VakilKaroWay /> */}
       {/* <ExpertSlider /> */}
       {/* <Testimonials /> */}
-      {/* <ContactSection /> */}
+      <ContactSection />
       {/* <Faq /> */}
       <TawkTo />
       <Footer />

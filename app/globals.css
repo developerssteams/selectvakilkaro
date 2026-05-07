@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /* ================= HEADER ================= */
-.rk-header {
+/* .rk-header {
   width: 100%;
   background: #000;
   position: fixed;
@@ -10,10 +10,28 @@
   z-index: 1000;
   display: flex;
   justify-content: center;
+  padding: 0px 15px;
   font-family: 'Poppins', sans-serif;
+} */
+
+
+.rk-header {
+  width: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  /* 👇 left-right outer spacing */
+  padding: 5px 14px;
+
+  font-family: "Poppins", sans-serif;
 }
 
-.rk-box {
+
+
+/* .rk-box {
   width: 95%;
   max-width: 1500px;
   padding: 16px 0;
@@ -21,6 +39,32 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+} */
+
+.rk-box {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  background: #191919;
+  border-radius: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.08); */
+  /* border: 2px solid #ffffff0d; */
+  border: 1px solid #a9a6a6;
+
+  /* 👇 inner spacing */
+  padding: 16px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .rk-logo {
@@ -1163,210 +1207,6 @@ p {
 
 /* ================= ContactSection ================= */
 
-.contact-section {
-
-  padding: 80px 35px;
-  font-family: "Poppins", sans-serif;
-}
-
-.contact-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px;
-  display: flex;
-  gap: 40px;
-}
-
-/* LEFT */
-.contact-form {
-  flex: 1.2;
-}
-
-.contact-form h2 {
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #000;
-
-}
-
-.form-row {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #bdbdbd;
-  padding: 10px 0;
-  font-size: 14px;
-  outline: none;
-}
-
-.contact-form textarea {
-  resize: none;
-  margin-bottom: 30px;
-}
-
-.form-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.checkbox {
-  display: flex;
-  gap: 10px;
-  font-size: 13px;
-  color: #555;
-}
-
-.checkbox input {
-  width: 16px;
-  height: 16px;
-}
-
-.checkbox a {
-  color: #000;
-  font-weight: 500;
-}
-
-.captcha {
-  font-size: 14px;
-  border-bottom: 1px solid #000;
-  padding-bottom: 5px;
-  width: 80px;
-  text-align: right;
-}
-
-.contact-submit-btn {
-  background: #000;
-  color: #fff;
-  padding: 10px 26px !important;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-/* RIGHT */
-.contact-info {
-  flex: 1;
-  background: linear-gradient(180deg, #2f2f2f, #1a1a1a);
-  border-radius: 20px;
-  padding: 40px;
-  color: #fff;
-}
-
-.contact-info h3 {
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.contact-info p {
-  font-size: 14px;
-  color: #cfcfcf;
-  margin: 20px 0 40px;
-}
-
-.contact-person {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 25px;
-  border-radius: 14px;
-}
-
-.contact-person h4 {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.contact-details {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact-details span {
-  font-size: 12px;
-  color: #bdbdbd;
-}
-
-.contact-details p {
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-
-/* ========================= */
-/*       RESPONSIVE         */
-/* ========================= */
-
-/* Tablets */
-@media (max-width: 992px) {
-  .contact-wrapper {
-    flex-direction: column;
-    padding: 30px;
-  }
-
-  .contact-info {
-    padding: 30px;
-  }
-
-  .contact-info h3 {
-    font-size: 22px;
-  }
-}
-
-/* Mobiles */
-@media (max-width: 600px) {
-  .contact-section {
-    padding: 50px 15px;
-  }
-
-  .contact-wrapper {
-    padding: 25px 20px;
-    gap: 30px;
-  }
-
-  .contact-form h2 {
-    font-size: 22px;
-    margin-bottom: 30px;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .form-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .captcha {
-    align-self: flex-end;
-  }
-
-  .submit-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .contact-info h3 {
-    font-size: 20px;
-  }
-
-  .contact-details {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
 
 /* ================= ContactSection ================= */
 

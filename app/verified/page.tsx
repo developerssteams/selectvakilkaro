@@ -32,7 +32,6 @@ export default function Verified() {
             <Testimonials />
             <ContactSection />
             <Faq />
-
             <TawkTo />
             <Footer />
         </>
