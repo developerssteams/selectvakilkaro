@@ -1,510 +1,323 @@
-/* JourneyMap.css - Fixed Version */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ================= MAIN SECTION ================= */
 
 .journey-section {
-  /* background: #000000; */
-  padding: 60px 20px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  overflow-x: hidden;
   width: 100%;
-}
-
-.journey-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Header */
-.journey-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.journey-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -1px;
-}
-
-.gold {
-  color: #f5c542;
-}
-
-.year-range {
-  color: #888;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  margin-top: 10px;
-  font-family: monospace;
-}
-
-/* Timeline Container - Reduced Height */
-.timeline-container {
+  /* background:#000; */
+  padding: 35px 20px 70px;
   position: relative;
-  height: 380px;
-  margin: 40px 0 50px;
-  width: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Timeline Lines */
-.timeline-base {
-  position: absolute;
-  bottom: 18%;
-  left: 3%;
-  right: 3%;
-  height: 3px;
-  background: #2a2a2a;
-  border-radius: 3px;
-}
+/* ================= TOP LOGO ================= */
 
-.timeline-dash {
-  position: absolute;
-  bottom: 18%;
-  left: 3%;
-  right: 3%;
-  height: 2px;
-  background: repeating-linear-gradient(90deg, #f5c542, #f5c542 15px, transparent 15px, transparent 30px);
-}
-
-/* Milestone Items */
-.milestone {
-  position: absolute;
-  transform: translateX(-50%);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.milestone:hover {
-  transform: translateX(-50%) translateY(-8px);
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: #f5c542;
-  border: 2px solid #000;
+.top-circle {
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  margin-bottom: 10px;
-  transition: all 0.3s;
-}
-
-.milestone:hover .dot {
-  transform: scale(1.3);
-  box-shadow: 0 0 0 4px rgba(245, 197, 66, 0.3);
-}
-
-.card {
-  background: #111;
-  padding: 8px 14px;
-  border-radius: 10px;
-  border: 1px solid #2a2a2a;
-  min-width: 120px;
-  transition: all 0.3s;
-}
-
-.milestone:hover .card {
-  border-color: #f5c542;
-}
-
-.year {
-  font-size: 0.65rem;
-  color: #f5c542;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.title {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #fff;
-  margin: 5px 0 3px;
-}
-
-.location {
-  font-size: 0.6rem;
-  color: #888;
-}
-
-.revenue {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #f5c542;
-  margin-top: 5px;
-  padding-top: 3px;
-  border-top: 1px solid #2a2a2a;
-}
-
-/* Walking Man - Smooth Animation */
-.walking-man {
-  position: absolute;
-  bottom: 12%;
-  z-index: 10;
-  animation: walk 18s ease-in-out infinite alternate;
-}
-
-@keyframes walk {
-  0% { left: 0%; transform: scale(0.6); bottom: 8%; }
-  20% { left: 18%; transform: scale(0.7); bottom: 18%; }
-  40% { left: 38%; transform: scale(0.8); bottom: 28%; }
-  60% { left: 56%; transform: scale(0.9); bottom: 40%; }
-  80% { left: 74%; transform: scale(1); bottom: 52%; }
-  100% { left: 90%; transform: scale(1.1); bottom: 64%; }
-}
-
-.man {
-  display: inline-block;
-}
-
-.man-head {
-  width: 24px;
-  height: 24px;
-  background: #ddd;
-  border-radius: 50%;
+  background: linear-gradient(135deg, #f5c542);
+  padding: 10px;
   margin: 0 auto;
-}
-
-.man-body {
-  width: 30px;
-  height: 35px;
-  background: #1a1a1a;
-  margin: 0 auto;
-  margin-top: -3px;
-  border-radius: 5px;
   position: relative;
+  z-index: 5;
+  top: 30px;
 }
 
-.man-body::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 15px;
-  background: #f5c542;
-  bottom: 5px;
-  left: 12px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
 
-.man-legs {
+.top-inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
   display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin-top: -2px;
-}
-
-.man-legs span {
-  width: 9px;
-  height: 15px;
-  background: #1a1a1a;
-  border-radius: 3px;
-  display: inline-block;
-}
-
-.talk {
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.6rem;
-  color: #f5c542;
-  white-space: nowrap;
-  border: 1px solid #2a2a2a;
-  animation: bounce 1s infinite;
-}
-
-.talk::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 40%;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #111;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-4px); }
-}
-
-/* Growth Arrow */
-.growth-arrow {
-  position: absolute;
-  right: 2%;
-  bottom: 12%;
-  font-size: 0.75rem;
-  color: #f5c542;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 3px;
-  animation: pulse 1s infinite;
-  font-weight: 600;
-  letter-spacing: 1px;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: translateX(0); }
-  50% { opacity: 1; transform: translateX(3px); }
+.top-inner h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
 }
 
-/* Stats Row */
-.stats-row {
+.top-inner span {
+  font-weight: 800;
+}
+
+.top-inner p {
+  font-size: 12px;
+  color: #444;
+}
+
+.top-logo-img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* ================= SVG LINE ================= */
+
+.timeline-svg {
+  position: absolute;
+  top: 220px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: 1;
+}
+
+.timeline-svg path {
+  stroke: #fff;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ================= TIMELINE ROW ================= */
+
+.timeline-row {
+  margin-top: 90px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 40px 0;
-  padding: 25px 20px;
-  background: #0a0a0a;
-  border-radius: 20px;
-  border: 1px solid #1a1a1a;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  z-index: 5;
 }
 
-.stat {
+/* ================= ITEM ================= */
+
+.timeline-item {
+  width: 160px;
   text-align: center;
-  flex: 1;
-  min-width: 100px;
-  padding: 12px;
-  background: #050505;
-  border-radius: 12px;
-  transition: all 0.3s;
 }
 
-.stat:hover {
-  border-color: #f5c542;
-  transform: translateY(-3px);
+/* ================= CIRCLE ================= */
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 7px;
+  margin: auto;
+
+  /* SAME GOLDEN COLOR */
+  background: linear-gradient(135deg, #ffcc00, #d4a017);
 }
 
-.stat-num {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #f5c542;
+.circle-inner {
+  width: 100%;
+  height: 100%;
+  background: #f3f3f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.stat-text {
-  font-size: 0.7rem;
-  color: #888;
+.circle-inner h3 {
+  font-size: 15px;
+  color: #111;
+  font-weight: 700;
 }
 
-/* Button */
-.btn-wrap {
-  text-align: center;
-  margin-top: 20px;
+/* ================= DOT LINE ================= */
+
+.dot-line {
+  width: 3px;
+  height: 28px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(135deg, #f5c542) !important;
 }
 
-.journey-btn {
+.dot-line span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #f5c542;
-  color: #000;
-  border: none;
-  padding: 12px 35px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-family: inherit;
 }
 
-.journey-btn:hover {
-  background: #000;
-  color: #f5c542;
-  border: 1px solid #f5c542;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 197, 66, 0.15);
+/* ================= TEXT ================= */
+
+.timeline-item p {
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 18px;
+  font-weight: 400;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ================= RESPONSIVE ================= */
 
-/* Tablet */
-@media (max-width: 900px) {
-  .journey-header h1 {
-    font-size: 2.5rem;
-  }
-  
-  .timeline-container {
-    height: 350px;
-  }
-  
-  .card {
-    min-width: 100px;
-    padding: 6px 10px;
-  }
-  
-  .title {
-    font-size: 0.7rem;
-  }
-  
-  .location {
-    font-size: 0.55rem;
-  }
-  
-  .revenue {
-    font-size: 0.65rem;
-  }
-}
+@media screen and (max-width:1200px) {
 
-/* Mobile */
-@media (max-width: 768px) {
   .journey-section {
-    padding: 40px 15px;
+    overflow-x: auto;
+    padding-bottom: 40px;
   }
-  
-  .journey-header h1 {
-    font-size: 2rem;
+
+  .timeline-row {
+    width: max-content;
+    min-width: 1100px;
+    gap: 18px;
+    justify-content: flex-start;
+    padding: 0 20px 20px;
   }
-  
-  .year-range {
-    font-size: 0.75rem;
+
+  .timeline-svg {
+    width: 1100px;
+    min-width: 1100px;
   }
-  
-  .timeline-container {
-    height: 420px;
-    margin: 30px 0;
+
+  .timeline-svg path {
+    stroke-width: 1.5;
   }
-  
-  .timeline-base,
-  .timeline-dash {
-    bottom: 8%;
+}
+
+
+/* ================= TABLET ================= */
+
+@media screen and (max-width:768px) {
+
+  .journey-section {
+    padding: 30px 10px 40px;
+    overflow-x: auto;
   }
-  
-  .milestone {
-    bottom: 5% !important;
-  }
-  
-  .card {
-    min-width: 85px;
-    padding: 5px 8px;
-  }
-  
-  .year {
-    font-size: 0.55rem;
-  }
-  
-  .title {
-    font-size: 0.6rem;
-  }
-  
-  .location {
-    font-size: 0.5rem;
-    display: none;
-  }
-  
-  .revenue {
-    font-size: 0.55rem;
-    margin-top: 3px;
-  }
-  
-  .dot {
-    width: 8px;
-    height: 8px;
-    margin-bottom: 6px;
-  }
-  
-  .walking-man {
-    animation: walk 20s ease-in-out infinite alternate;
-  }
-  
-  .talk {
-    font-size: 0.5rem;
-    padding: 3px 8px;
-    top: -30px;
-  }
-  
-  .growth-arrow {
-    font-size: 0.6rem;
-    bottom: 5%;
-  }
-  
-  .stats-row {
-    gap: 10px;
-    padding: 15px;
-  }
-  
-  .stat {
-    min-width: 70px;
+
+  /* TOP LOGO */
+
+  .top-circle {
+    width: 120px;
+    height: 120px;
     padding: 8px;
+    top: 10px;
   }
-  
-  .stat-num {
-    font-size: 1rem;
-  }
-  
-  .stat-text {
-    font-size: 0.55rem;
-  }
-  
-  .journey-btn {
-    padding: 10px 25px;
-    font-size: 0.8rem;
-  }
-}
 
-/* Small Mobile */
-@media (max-width: 550px) {
-  .timeline-container {
-    height: 380px;
+  .top-logo-img {
+    width: 80%;
+    height: 80%;
   }
-  
-  .card {
-    min-width: 70px;
-    padding: 4px 6px;
-  }
-  
-  .title {
-    font-size: 0.5rem;
-  }
-  
-  .year {
-    font-size: 0.45rem;
-  }
-  
-  .revenue {
-    font-size: 0.45rem;
-  }
-  
-  .talk {
+
+  /* SVG */
+
+  .timeline-svg {
     display: none;
   }
-  
-  .walking-man {
-    animation: walkSmall 18s ease-in-out infinite alternate;
+
+  /* ROW */
+
+  .timeline-row {
+    margin-top: 50px;
+    width: max-content;
+    min-width: 950px;
+    gap: 14px;
+    justify-content: flex-start;
+    padding-bottom: 20px;
   }
-  
-  @keyframes walkSmall {
-    0% { left: 0%; transform: scale(0.5); bottom: 5%; }
-    20% { left: 18%; transform: scale(0.55); bottom: 12%; }
-    40% { left: 38%; transform: scale(0.6); bottom: 20%; }
-    60% { left: 56%; transform: scale(0.65); bottom: 28%; }
-    80% { left: 74%; transform: scale(0.7); bottom: 36%; }
-    100% { left: 90%; transform: scale(0.75); bottom: 44%; }
+
+  /* ITEM */
+
+  .timeline-item {
+    width: 120px;
   }
-  
-  .stat {
-    min-width: 60px;
+
+  /* CIRCLE */
+
+  .circle {
+    width: 90px;
+    height: 90px;
+    padding: 5px;
   }
-  
-  .stat-num {
-    font-size: 0.85rem;
+
+  .circle-inner h3 {
+    font-size: 11px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* LINE */
+
+  .dot-line {
+    height: 22px;
+  }
+
+  .dot-line span {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* TEXT */
+
+  .timeline-item p {
+    font-size: 9px;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+
+  /* SCROLLBAR */
+
+  .journey-section::-webkit-scrollbar,
+  .timeline-row::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .journey-section::-webkit-scrollbar-thumb,
+  .timeline-row::-webkit-scrollbar-thumb {
+    background: #777;
+    border-radius: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  .stats-row {
-    flex-wrap: wrap;
+
+/* ================= MOBILE ================= */
+
+@media screen and (max-width:480px) {
+
+  .journey-section {
+    padding: 25px 8px 35px;
   }
-  
-  .stat {
-    flex: 0 0 calc(50% - 10px);
+
+  .top-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .timeline-row {
+    min-width: 820px;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .timeline-item {
+    width: 105px;
+  }
+
+  .circle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .circle-inner h3 {
+    font-size: 9px;
+  }
+
+  .timeline-item p {
+    font-size: 8px;
+    line-height: 1.4;
+  }
+
+  .dot-line {
+    height: 18px;
+  }
+
+  .dot-line span {
+    width: 10px;
+    height: 10px;
   }
 }

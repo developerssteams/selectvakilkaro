@@ -1,137 +1,126 @@
+// JourneyMap.jsx
+"use client";
+
 import React from "react";
 import "./ContactSection.css";
+import Image from "next/image";
+
+const timeline = [
+  {
+    year: "Oct 2017",
+    text: "We Started Our Operations from Gohana, Haryana on 17th Oct 2017 & worked on a pilot test for early user feedback",
+    color: "#f5c542",
+
+  },
+  {
+    year: "Dec 2018",
+    text: "Opened 2nd Office at Civil Lines, Jaipur, Rajasthan, & also formed a private limited company & finalized the name Vakilkaro.com",
+    color: "#f5c542",
+  },
+  {
+    year: "March 2021",
+    text: "Achieved a milestone of Rs. 1 crore revenue evidencing good management and timely services to customers.",
+    color: "#f5c542",
+  },
+  {
+    year: "March 2023",
+    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
+    color: "#f5c542",
+  },
+  {
+    year: "March 2024",
+    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
+    color: "#f5c542",
+  },
+  {
+    year: "March 2025",
+    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
+    color: "#f5c542",
+  },
+  {
+    year: "March 2026",
+    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
+    color: "#f5c542",
+  },
+];
 
 const JourneyMap = () => {
-  const milestones = [
-    {
-      year: "Oct 2017",
-      title: "We Started",
-      description: "Operations from Gohana, Haryana",
-      location: "Gohana",
-      revenue: "₹0",
-      left: "2%",
-      bottom: "8%"
-    },
-    {
-      year: "Dec 2018",
-      title: "First Expansion",
-      description: "2nd Office at Civil Lines",
-      location: "Jaipur",
-      revenue: "₹25L",
-      left: "20%",
-      bottom: "18%"
-    },
-    {
-      year: "March 2021",
-      title: "Revenue Milestone",
-      description: "Good management & timely service",
-      location: "Jaipur",
-      revenue: "₹1 Cr",
-      left: "38%",
-      bottom: "30%"
-    },
-    {
-      year: "March 2023",
-      title: "Bigger Office",
-      description: "Spacious office at Murlipur",
-      location: "Murlipur, Jaipur",
-      revenue: "₹2.5 Cr",
-      left: "56%",
-      bottom: "42%"
-    },
-    {
-      year: "March 2024",
-      title: "Digital Stronghold",
-      description: "8,000+ YouTube subscribers",
-      location: "Multiple Locations",
-      revenue: "₹5 Cr+",
-      left: "74%",
-      bottom: "54%"
-    },
-    {
-      year: "March 2026",
-      title: "Future Vision",
-      description: "Pan-India presence",
-      location: "Multiple Cities",
-      revenue: "₹20 Cr+",
-      left: "90%",
-      bottom: "66%"
-    }
-  ];
-
   return (
     <section className="journey-section">
-      <div className="journey-container">
-        <div className="journey-header">
-          <h1>
-            Our <span className="gold">Journey</span>
-          </h1>
-          <p className="year-range">2017 — 2026</p>
+
+      {/* TOP CIRCLE */}
+      <div className="top-circle">
+        <div className="top-inner">
+          <Image
+            src="/logo.jpeg"
+            alt="Vakilkaro Logo"
+            width={120}
+            height={120}
+            className="top-logo-img"
+            priority
+          />
         </div>
+      </div>
 
-        <div className="timeline-container">
-          {/* Base Line */}
-          <div className="timeline-base"></div>
-          <div className="timeline-dash"></div>
+      {/* SVG LINES */}
+      {/* SVG LINES */}
+      <svg
+        className="timeline-svg"
+        viewBox="0 0 1600 320"
+        preserveAspectRatio="none"
+      >
 
-          {/* Milestones */}
-          {milestones.map((item, idx) => (
+        {/* LEFT SIDE */}
+
+        {/* 1 */}
+        <path d="M800 20 L800 60 L120 60 L120 120" />
+
+        {/* 2 */}
+        <path d="M800 20 L800 70 L340 70 L340 130" />
+
+        {/* 3 */}
+        <path d="M800 20 L800 80 L560 80 L560 135" />
+
+        {/* CENTER */}
+        <path d="M800 20 L800 150" />
+
+        {/* RIGHT SIDE */}
+
+        {/* 5 */}
+        <path d="M800 20 L800 80 L1040 80 L1040 135" />
+
+        {/* 6 */}
+        <path d="M800 20 L800 70 L1260 70 L1260 130" />
+
+        {/* 7 */}
+        <path d="M800 20 L800 60 L1480 60 L1480 120" />
+
+      </svg>
+
+      {/* TIMELINE */}
+      <div className="timeline-row">
+        {timeline.map((item, index) => (
+          <div className="timeline-item" key={index}>
+
             <div
-              key={idx}
-              className="milestone"
-              style={{ left: item.left, bottom: item.bottom }}
+              className="circle"
+              style={{ background: item.color }}
             >
-              <div className="dot"></div>
-              <div className="card">
-                <div className="year">{item.year}</div>
-                <div className="title">{item.title}</div>
-                <div className="location">📍 {item.location}</div>
-                <div className="revenue">{item.revenue}</div>
+              <div className="circle-inner">
+                <h3>{item.year}</h3>
               </div>
             </div>
-          ))}
 
-          {/* Walking Character */}
-          <div className="walking-man">
-            <div className="man">
-              <div className="man-head"></div>
-              <div className="man-body"></div>
-              <div className="man-legs">
-                <span></span>
-                <span></span>
-              </div>
+            <div
+              className="dot-line"
+              style={{ background: item.color }}
+            >
+              <span></span>
             </div>
-            <div className="talk">🚀 Growing...</div>
-          </div>
 
-          {/* Arrow */}
-          <div className="growth-arrow">📈 GROWTH →</div>
-        </div>
-
-        {/* Stats */}
-        <div className="stats-row">
-          <div className="stat">
-            <span className="stat-num">8,000+</span>
-            <span className="stat-text">YouTube Subs</span>
+            <p>{item.text}</p>
           </div>
-          <div className="stat">
-            <span className="stat-num">₹5 Cr+</span>
-            <span className="stat-text">Revenue</span>
-          </div>
-          <div className="stat">
-            <span className="stat-num">3+</span>
-            <span className="stat-text">Offices</span>
-          </div>
-          <div className="stat">
-            <span className="stat-num">20K+</span>
-            <span className="stat-text">Happy Clients</span>
-          </div>
-        </div>
-
-        {/* Button */}
-        <div className="btn-wrap">
-          <button className="journey-btn">Start Your Journey</button>
-        </div>
+        ))}
       </div>
     </section>
   );

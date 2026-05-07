@@ -31,14 +31,16 @@ export default function ITRSteps() {
             <div className="itr-header">
                 <span className="badge">How it works</span>
 
-                <h2>
-                    5 Simple Steps to e-file your <span>Income Tax Return</span>
-                </h2>
+                <h1>
+                    4 Simple Steps to <span>File</span>
+                </h1>
+                <p style={{ color: "black" }}>Seeking legal help is a breeze with VakilKaro. Just a few clicks stand between you and expert guidance. Your solution is just a click away!</p>
 
                 <button className="file-btn">File Now</button>
             </div>
 
             <div className="steps-container">
+
                 {steps.map((step, index) => (
                     <div key={index} className="step-card">
 

@@ -36,10 +36,10 @@ const contentData = [
 ];
 
 const partners = [
-  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
-  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
-  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
-  { img: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
+  { img: "https://www.vakilkaro.com/_next/static/media/Client-1.76ed41a6.png" },
+  { img: "https://www.vakilkaro.com/_next/static/media/Client-6.3e6fc804.png" },
+  { img: "https://www.vakilkaro.com/_next/static/media/Client-1.76ed41a6.png" },
+  { img: "https://www.vakilkaro.com/_next/static/media/Client-12.2842a11b.png" },
 ];
 
 const LegalRepresentation = () => {

@@ -25,6 +25,7 @@ const Partner = () => {
   return (
     <section className="partner-section">
       <h1>Testimonials That Speak for <span style={{ color: "#f5c542" }} > Us</span></h1>
+      <br />
 
       <div className="partner-container">
         {testimonials.map((item, index) => (
