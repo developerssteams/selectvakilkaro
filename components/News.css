@@ -1,6 +1,6 @@
 .news-section {
   color: #fff;
-  padding: 60px 35px;
+  padding: 30px 35px;
   /* background: radial-gradient(circle at top, #1a2238, #0b0f1a); */
 }
 
@@ -27,7 +27,7 @@
 .news-heading span {
   font-weight: 700;
   color: #f5c542;
-  text-shadow: 0 0 10px rgba(245, 197, 66, 0.4);
+ 
 }
 
 .news-heading p {
@@ -152,15 +152,16 @@
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
-  color: #f5c542;
+  /* color: #f5c542; */
+  color: white;
   border: 1px solid rgba(245, 197, 66, 0.4);
   transition: 0.3s;
 }
 
 .news-read:hover {
-  /* background: #f5c542; */
-  color: #000;
-  box-shadow: 0 0 15px rgba(245, 197, 66, 0.6);
+  background: #f5c542;
+  color:black;
+  /* box-shadow: 0 0 15px rgba(245, 197, 66, 0.6); */
 }
 
 /* Tablet */

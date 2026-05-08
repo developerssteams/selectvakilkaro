@@ -28,6 +28,7 @@ export default function Home() {
       <Journey />
       <News />
       <ContactSection />
+      <Faq />
       <Partner />
       {/* <Story /> */}
       {/* <WhyVakilkaro /> */}
@@ -35,7 +36,6 @@ export default function Home() {
       {/* <VakilKaroWay /> */}
       {/* <ExpertSlider /> */}
       {/* <Testimonials /> */}
-      {/* <Faq /> */}
       <TawkTo />
       <Footer />
     </>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-// import "./Faq.css";
+import "./Faq.css";
 
 const faqs = [
   {
@@ -39,9 +39,9 @@ const Faq = () => {
 
   return (
     <section className="faq-section">
-      <h2>
+      <h1>
         Frequently <span>Asked Questions</span>
-      </h2>
+      </h1>
       <p className="faq-subtitle">
         Find quick answers to common queries about our legal services and process.
       </p>

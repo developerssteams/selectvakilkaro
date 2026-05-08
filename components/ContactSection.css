@@ -9,6 +9,21 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.journey-section h1 {
+  letter-spacing: .5px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 300;
+  color: white;
+}
+
+.journey-section h1 span {
+  color: #f5c542;
+  font-weight: 700;
+}
+
+
+
 /* ================= TOP LOGO ================= */
 
 .top-circle {

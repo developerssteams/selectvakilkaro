@@ -47,6 +47,7 @@ const timeline = [
 const JourneyMap = () => {
   return (
     <section className="journey-section">
+      <h1>OUR <span> STORY</span></h1>
 
       {/* TOP CIRCLE */}
       <div className="top-circle">

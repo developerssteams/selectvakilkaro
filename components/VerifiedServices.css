@@ -2,6 +2,7 @@
   padding: 40px;
   color: #fff;
   position: relative;
+  
 }
 
 
@@ -50,6 +51,7 @@
   align-items: center;
   margin: 0px;
 }
+
 .vs-top-card.active {
   background: #f5c542;
   /* border-color: #f5c542; */
