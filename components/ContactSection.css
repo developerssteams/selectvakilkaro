@@ -1,43 +1,52 @@
-/* ================= MAIN SECTION ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= MAIN ================= */
 
 .journey-section {
   width: 100%;
-  /* background:#000; */
-  padding: 35px 20px 70px;
-  position: relative;
+  background: #fff;
+  padding: 70px 20px;
   overflow: hidden;
+  position: relative;
   font-family: 'Poppins', sans-serif;
 }
 
-.journey-section h1 {
-  letter-spacing: .5px;
+/* ================= HEADING ================= */
+
+.journey-heading {
   text-align: center;
-  font-size: 44px;
-  font-weight: 300;
-  color: white;
+  margin-bottom: 25px;
 }
 
-.journey-section h1 span {
-  color: #f5c542;
+.journey-heading h1 {
+  font-size: 50px;
+  font-weight: 300;
+  color: #111;
+}
+
+.journey-heading h1 span {
+  color: #efbf04;
   font-weight: 700;
 }
 
-
-
 /* ================= TOP LOGO ================= */
 
-.top-circle {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f5c542);
-  padding: 10px;
-  margin: 0 auto;
+.top-circle-wrapper {
+  display: flex;
+  justify-content: center;
   position: relative;
   z-index: 5;
-  top: 30px;
 }
 
+.top-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #efbf04);
+  padding: 5px;
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 10px 25px rgba(245, 197, 66, 0.3);
+}
 
 .top-inner {
   width: 100%;
@@ -47,292 +56,255 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-}
-
-.top-inner h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #111;
-}
-
-.top-inner span {
-  font-weight: 800;
-}
-
-.top-inner p {
-  font-size: 12px;
-  color: #444;
 }
 
 .top-logo-img {
-  width: 85%;
-  height: 85%;
+  width: 82%;
+  height: 82%;
   object-fit: contain;
   border-radius: 50%;
 }
 
-/* ================= SVG LINE ================= */
+/* ================= SVG ================= */
+
+.svg-wrapper {
+  position: relative;
+  height: 170px;
+  margin-top: -10px;
+}
 
 .timeline-svg {
-  position: absolute;
-  top: 220px;
-  left: 0;
   width: 100%;
-  height: 220px;
-  z-index: 1;
+  height: 100%;
 }
 
 .timeline-svg path {
-  stroke: #fff;
-  stroke-width: 2;
   fill: none;
+  stroke: #efbf04;
+  stroke-width: 2;
+  stroke-dasharray: 6;
+  animation: dashMove 15s linear infinite;
 }
 
-/* ================= TIMELINE ROW ================= */
+/* ================= TIMELINE ================= */
+
+.timeline-wrapper {
+  width: 100%;
+  margin-top: -25px;
+}
 
 .timeline-row {
-  margin-top: 90px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 8px;
-  position: relative;
-  z-index: 5;
+  gap: 10px;
+  width: 100%;
 }
 
-/* ================= ITEM ================= */
+.timeline-col {
+  flex: 1;
+  min-width: 0;
+}
 
 .timeline-item {
-  width: 160px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
 /* ================= CIRCLE ================= */
 
 .circle {
-  width: 120px;
-  height: 120px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  padding: 7px;
+  padding: 3px;
   margin: auto;
+  background: linear-gradient(135deg, #efbf04, #d4a017);
+  position: relative;
+  transition: 0.4s ease;
+}
 
-  /* SAME GOLDEN COLOR */
-  background: linear-gradient(135deg, #ffcc00, #d4a017);
+.circle::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(245, 197, 66, 0.15);
+  animation: pulse 2s infinite;
+}
+
+.circle:hover {
+  transform: translateY(-6px) scale(1.05);
 }
 
 .circle-inner {
   width: 100%;
   height: 100%;
-  background: #f3f3f3;
+  background: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
 .circle-inner h3 {
-  font-size: 15px;
-  color: #111;
+  font-size: 10px;
   font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
 }
 
 /* ================= DOT LINE ================= */
 
 .dot-line {
-  width: 3px;
-  height: 28px;
-  margin: 0 auto;
+  width: 2px;
+  height: 24px;
+  background: #efbf04;
+  margin: 10px auto;
   position: relative;
-  background: linear-gradient(135deg, #f5c542) !important;
 }
 
 .dot-line span {
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background: #efbf04;
   position: absolute;
-  bottom: -8px;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
-  background: #f5c542;
+  box-shadow: 0 0 10px rgba(245, 197, 66, 0.6);
 }
 
 /* ================= TEXT ================= */
 
 .timeline-item p {
-  color: #fff;
-  font-size: 11px;
-  line-height: 1.5;
-  margin-top: 18px;
-  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.7;
+  color: black;
+  max-width: 140px;
+  margin-inline: auto;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media screen and (max-width:1200px) {
-
-  .journey-section {
-    overflow-x: auto;
-    padding-bottom: 40px;
-  }
+@media (max-width: 1200px) {
 
   .timeline-row {
-    width: max-content;
-    min-width: 1100px;
-    gap: 18px;
-    justify-content: flex-start;
-    padding: 0 20px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
   }
 
-  .timeline-svg {
-    width: 1100px;
-    min-width: 1100px;
-  }
-
-  .timeline-svg path {
-    stroke-width: 1.5;
+  .timeline-col {
+    flex: 0 0 22%;
   }
 }
 
+@media (max-width: 992px) {
 
-/* ================= TABLET ================= */
-
-@media screen and (max-width:768px) {
-
-  .journey-section {
-    padding: 30px 10px 40px;
-    overflow-x: auto;
+  .journey-heading h1 {
+    font-size: 38px;
   }
-
-  /* TOP LOGO */
 
   .top-circle {
     width: 120px;
     height: 120px;
-    padding: 8px;
-    top: 10px;
   }
 
-  .top-logo-img {
-    width: 80%;
-    height: 80%;
-  }
-
-  /* SVG */
-
-  .timeline-svg {
+  .svg-wrapper {
     display: none;
   }
 
-  /* ROW */
-
-  .timeline-row {
-    margin-top: 50px;
-    width: max-content;
-    min-width: 950px;
-    gap: 14px;
-    justify-content: flex-start;
-    padding-bottom: 20px;
-  }
-
-  /* ITEM */
-
-  .timeline-item {
-    width: 120px;
-  }
-
-  /* CIRCLE */
-
-  .circle {
-    width: 90px;
-    height: 90px;
-    padding: 5px;
-  }
-
-  .circle-inner h3 {
-    font-size: 11px;
-    line-height: 1.3;
-    text-align: center;
-  }
-
-  /* LINE */
-
-  .dot-line {
-    height: 22px;
-  }
-
-  .dot-line span {
-    width: 12px;
-    height: 12px;
-  }
-
-  /* TEXT */
-
-  .timeline-item p {
-    font-size: 9px;
-    line-height: 1.5;
-    margin-top: 14px;
-  }
-
-  /* SCROLLBAR */
-
-  .journey-section::-webkit-scrollbar,
-  .timeline-row::-webkit-scrollbar {
-    height: 5px;
-  }
-
-  .journey-section::-webkit-scrollbar-thumb,
-  .timeline-row::-webkit-scrollbar-thumb {
-    background: #777;
-    border-radius: 10px;
+  .timeline-col {
+    flex: 0 0 30%;
   }
 }
 
-
-/* ================= MOBILE ================= */
-
-@media screen and (max-width:480px) {
+@media (max-width: 768px) {
 
   .journey-section {
-    padding: 25px 8px 35px;
+    padding: 50px 10px;
   }
 
-  .top-circle {
-    width: 100px;
-    height: 100px;
+  .journey-heading h1 {
+    font-size: 30px;
   }
 
-  .timeline-row {
-    min-width: 820px;
-    gap: 12px;
-    margin-top: 40px;
-  }
-
-  .timeline-item {
-    width: 105px;
+  .timeline-col {
+    flex: 0 0 45%;
   }
 
   .circle {
-    width: 75px;
-    height: 75px;
-  }
-
-  .circle-inner h3 {
-    font-size: 9px;
+    width: 65px;
+    height: 65px;
   }
 
   .timeline-item p {
-    font-size: 8px;
-    line-height: 1.4;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .timeline-col {
+    flex: 0 0 100%;
   }
 
-  .dot-line {
-    height: 18px;
-  }
-
-  .dot-line span {
-    width: 10px;
-    height: 10px;
+  .top-circle {
+    width: 90px;
+    height: 90px;
   }
 }

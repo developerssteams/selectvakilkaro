@@ -16,13 +16,13 @@ import TawkTo from "@/components/TawkTo";
 import Footer from "@/components/Footer";
 import "../app/globals.css";
 import Header from "@/components/Header";
-import ITRSteps from "@/components/Steps";
+import Steps from "@/components/Steps";
 export default function Home() {
   return (
     <>
       <Header />
       <Navbar />
-      <ITRSteps />
+      <Steps />
       <VerifiedServices />
       <LegalRepresentation />
       <Journey />

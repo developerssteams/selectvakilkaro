@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Faq.css";
 
 const faqs = [
@@ -39,35 +40,45 @@ const Faq = () => {
 
   return (
     <section className="faq-section">
-      <h1>
-        Frequently <span>Asked Questions</span>
-      </h1>
-      <p className="faq-subtitle">
-        Find quick answers to common queries about our legal services and process.
-      </p>
+      <Container>
+        {/* Header */}
+        <div className="text-center">
+          <h1>
+            Frequently <span>Asked Questions</span>
+          </h1>
+          <p className="faq-subtitle mx-auto">
+            Find quick answers to common queries about our legal services and process.
+          </p>
+        </div>
 
-      <div className="faq-container">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className={`faq-item ${activeIndex === index ? "active" : ""}`}
-            onClick={() => toggleFAQ(index)}
-          >
-            <div className="faq-question">
-              <span>{faq.question}</span>
-              <span className="icon">
-                {activeIndex === index ? "−" : "+"}
-              </span>
+        {/* FAQ Items */}
+        <Row className="justify-content-center">
+          <Col lg={8} md={10} sm={12}>
+            <div className="faq-container">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className={`faq-item ${activeIndex === index ? "active" : ""}`}
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <div className="faq-question">
+                    <span className="qus">{faq.question}</span>
+                    <span className="icon">
+                      {activeIndex === index ? "−" : "+"}
+                    </span>
+                  </div>
+
+                  {activeIndex === index && (
+                    <div className="faq-answer">
+                      <p>{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-
-            {activeIndex === index && (
-              <div className="faq-answer">
-                <p>{faq.answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   );
 };

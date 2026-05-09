@@ -1,3 +1,6 @@
+"use client";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Partner.css";
 
 const testimonials = [
@@ -24,27 +27,35 @@ const testimonials = [
 const Partner = () => {
   return (
     <section className="partner-section">
-      <h1>Testimonials That Speak for <span style={{ color: "#f5c542" }} > Us</span></h1>
-      <br />
+      <Container>
+        {/* Header */}
+        <div className="text-center mb-5">
+          <h1>
+            Testimonials That Speak for <span>Us</span>
+          </h1>
+        </div>
 
-      <div className="partner-container">
-        {testimonials.map((item, index) => (
-          <div className="partner-card" key={index}>
-            <div className="partner-user">
-              <img src={item.img} alt="user" />
-              <div>
-                <h3>{item.name}</h3>
-                <p className="partner-rating">
-                  {"★".repeat(item.rating)}
-                  {"☆".repeat(5 - item.rating)} {item.rating}/5
-                </p>
+        {/* Testimonials Grid */}
+        <Row className="partner-container justify-content-center">
+          {testimonials.map((item, index) => (
+            <Col key={index} lg={4} md={6} sm={12} className="mb-4">
+              <div className="partner-card">
+                <div className="partner-user">
+                  <img src={item.img} alt={item.name} />
+                  <div>
+                    <h3>{item.name}</h3>
+                    <p className="partner-rating mb-0">
+                      {"★".repeat(item.rating)}
+                      {"☆".repeat(5 - item.rating)} {item.rating}/5
+                    </p>
+                  </div>
+                </div>
+                <p className="partner-text mb-0">{item.text}</p>
               </div>
-            </div>
-
-            <p className="partner-text">{item.text}</p>
-          </div>
-        ))}
-      </div>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </section>
   );
 };

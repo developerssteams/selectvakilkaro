@@ -25,7 +25,7 @@ const steps = [
     },
 ];
 
-export default function ITRSteps() {
+export default function Steps() {
     return (
         <section className="itr-section">
             <div className="itr-header">

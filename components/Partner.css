@@ -1,89 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 .partner-section {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
   color: white;
-  text-align: center;
-  padding: 20px 20px;
+  padding: 60px 0;
   font-family: "Poppins", sans-serif;
 }
 
+/* Header Styles */
 .partner-section h1 {
   font-size: 48px;
   font-weight: 300;
-  margin-bottom: 8px;
-  /* gap control */
+  margin-bottom: 0;
   line-height: 1.2;
-  text-align: center;
   color: white;
 }
 
 .partner-section h1 span {
   font-weight: 700;
+  color: #efbf04;
 }
 
-/* container */
+/* Container */
 .partner-container {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-/* card */
+/* Card */
 .partner-card {
-  background: #ffffff0f;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
   padding: 25px;
   border-radius: 20px;
-  width: 320px;
   text-align: left;
-  transition: 0.3s;
-  border: 1px solid #f5a623;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(245, 165, 35, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .partner-card:hover {
   transform: translateY(-8px);
+  border-color: #f5a623;
+  box-shadow: 0 10px 30px rgba(245, 165, 35, 0.15);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* user */
+/* User Info */
 .partner-user {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .partner-user img {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f5a623;
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-user img {
+  transform: scale(1.05);
 }
 
 .partner-user h3 {
   font-size: 16px;
-  margin: 0;
+  font-weight: 600;
+  margin: 0 0 5px 0;
   color: white;
 }
 
-/* rating */
+/* Rating */
 .partner-rating {
   color: #f5a623;
   font-size: 14px;
+  font-weight: 500;
 }
 
-/* text */
+/* Text */
 .partner-text {
   font-size: 14px;
-  opacity: 0.8;
-  line-height: 1.5;
-  color: white;
+  opacity: 0.85;
+  line-height: 1.6;
+  color: #e0e0e0;
+  flex-grow: 1;
 }
 
-/* responsive */
+/* Responsive */
+@media (max-width: 992px) {
+  .partner-section {
+    padding: 50px 0;
+  }
+  
+  .partner-section h1 {
+    font-size: 40px;
+  }
+}
+
 @media (max-width: 768px) {
+  .partner-section {
+    padding: 40px 0;
+  }
+  
+  .partner-section h1 {
+    font-size: 32px;
+  }
+  
+  .partner-card {
+    padding: 20px;
+  }
+  
+  .partner-user img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .partner-user h3 {
+    font-size: 15px;
+  }
+  
+  .partner-rating {
+    font-size: 13px;
+  }
+  
+  .partner-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .partner-section {
+    padding: 30px 0;
+  }
+  
   .partner-section h1 {
     font-size: 26px;
   }
-
+  
   .partner-card {
-    width: 100%;
-    max-width: 350px;
+    padding: 18px;
+  }
+  
+  .partner-user {
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .partner-user img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .partner-user h3 {
+    font-size: 14px;
+  }
+  
+  .partner-rating {
+    font-size: 12px;
+  }
+  
+  .partner-text {
+    font-size: 12px;
   }
 }

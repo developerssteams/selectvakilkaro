@@ -1,5 +1,6 @@
 import React from "react";
-import "./News.css";
+import { Container, Row, Col } from "react-bootstrap";
+// import "./News.css";
 
 const data = [
     {
@@ -35,48 +36,44 @@ const data = [
 const NewsSection = () => {
     return (
         <section className="news-section">
+            <Container>
+                {/* Heading */}
+                <div className="news-heading text-center">
+                    <h2>
+                        VakilKaro <span>In News</span>
+                    </h2>
+                    <p className="mx-auto" style={{ maxWidth: "600px" }}>
+                        We've simplified legal assistance for you. From consultation to resolution,
+                        our process is designed to be seamless and efficient.
+                    </p>
+                </div>
 
-            {/* Heading */}
-            <div className="news-heading">
-                <h2>
-                    VakilKaro <span>In News</span>
-                </h2>
-                <p>
-                    We've simplified legal assistance for you. From consultation to resolution,
-                    our process is designed to be seamless and efficient.
-                </p>
-            </div>
+                {/* Grid */}
+                <Row className="news-grid justify-content-center mt-5">
+                    {data.map((item, i) => (
+                        <Col key={i} lg={3} md={6} sm={12} className="mb-4">
+                            <div className="news-card">
+                                {/* IMAGE WRAPPER */}
+                                <div className="news-img-wrapper">
+                                    <img src={`${item.img}?auto=format&fit=crop&w=800&q=80`} alt="news" />
+                                    
+                                    {/* DATE BADGE */}
+                                    <div className="news-date">
+                                        30 <br /> Nov <br /> 2021
+                                    </div>
+                                </div>
 
-            {/* Grid */}
-            <div className="news-grid">
-                {data.map((item, i) => (
-                    <div className="news-card" key={i}>
-
-                        {/* IMAGE */}
-                        <div className="news-img-wrapper">
-                            <img src={`${item.img}?auto=format&fit=crop&w=800&q=80`} alt="" />
-
-
-                            {/* DATE */}
-                            <div className="news-date">
-                                30 <br /> Nov <br /> 2021
+                                {/* CONTENT */}
+                                <div className="news-content">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.desc}</p>
+                                    <span className="news-read">Read More</span>
+                                </div>
                             </div>
-
-                            {/* LOGO */}
-                            {/* <img src={item.logo} alt="" className="news-logo" /> */}
-                        </div>
-
-                        {/* CONTENT */}
-                        <div className="news-content">
-                            <h3>{item.title}</h3>
-                            <p>{item.desc}</p>
-                            <span className="news-read">Read More</span>
-                        </div>
-
-                    </div>
-                ))}
-            </div>
-
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
         </section>
     );
 };

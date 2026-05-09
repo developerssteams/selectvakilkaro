@@ -1,6 +1,6 @@
 "use client";
-
 import { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "./LegalRepresentation.css";
 
 // 4 Titles ka content
@@ -46,13 +46,10 @@ const LegalRepresentation = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  // Har title ke liye 5 second ka time (line complete hone tak)
-  const DURATION = 5000; // 5 seconds
+  const DURATION = 5000;
 
   useEffect(() => {
-    // Reset progress when activeIndex changes
     setProgress(0);
-
     const startTime = Date.now();
 
     const interval = setInterval(() => {
@@ -60,7 +57,6 @@ const LegalRepresentation = () => {
       const newProgress = (elapsed / DURATION) * 100;
 
       if (newProgress >= 100) {
-        // Line complete ho gayi, next title pe move karo
         setProgress(100);
         setTimeout(() => {
           setActiveIndex((prev) => (prev + 1) % contentData.length);
@@ -69,90 +65,88 @@ const LegalRepresentation = () => {
       } else {
         setProgress(newProgress);
       }
-    }, 16); // 60fps ke liye
+    }, 16);
 
     return () => clearInterval(interval);
-  }, [activeIndex]); // activeIndex change hone par naya timer start
+  }, [activeIndex]);
 
   const currentContent = contentData[activeIndex];
 
   return (
     <section className="why-section">
+      <Container>
+        {/* HEADER */}
+        <div className="why-top text-center">
+          <h1>
+            Why Thousands Trust <span style={{ color: "#efbf04", fontWeight: "700" }}>VakilKaro</span> ?
+          </h1>
+          <p className="mx-auto" style={{ maxWidth: "700px" }}>
+            Choose Vakilkaro for unmatched legal expertise, premium experience and a
+            strong professional network that ensures your business grows without legal hurdles.
+          </p>
+        </div>
 
-      {/* HEADER */}
-      <div className="why-top">
-        <h1>
-          Why Thousands Trust <span style={{ color: "#f5c542", fontWeight: "700" }}>VakilKaro</span> ?
-        </h1>
-        <p>
-          Choose Vakilkaro for unmatched legal expertise, premium experience and a
-          strong professional network that ensures your business grows without legal
-          hurdles.
-        </p>
-      </div>
-
-      {/* MAIN CONTENT */}
-      <div className="why-container">
-
-        {/* LEFT BOX - 4 Titles with Progress Line */}
-        <div className="why-left">
-          {contentData.map((item, index) => (
-            <div
-              key={index}
-              className={`why-item ${activeIndex === index ? "active" : ""}`}
-              onClick={() => {
-                setActiveIndex(index);
-                setProgress(0);
-              }}
-            >
-              <p><span>{item.icon}</span>
-                {item.title}</p>
-              {/* Progress Bar - Sirf active wale mein dikhegi */}
-              {activeIndex === index && (
-                <div className="item-progress-bar">
-                  <div
-                    className="item-progress-fill"
-                    style={{ width: `${progress}%` }}
-                  />
+        {/* MAIN CONTENT */}
+        <Row className="why-container mt-5">
+          {/* LEFT BOX - 4 Titles */}
+          <Col lg={4} md={12} className="mb-4 mb-lg-0">
+            <div className="why-left">
+              {contentData.map((item, index) => (
+                <div
+                  key={index}
+                  className={`why-item ${activeIndex === index ? "active" : ""}`}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    setProgress(0);
+                  }}
+                >
+                  <p>
+                    <span>{item.icon}</span>
+                    {item.title}
+                  </p>
+                  {activeIndex === index && (
+                    <div className="item-progress-bar">
+                      <div
+                        className="item-progress-fill"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
-        </div>
+          </Col>
 
-        {/* RIGHT BOX - Dynamic Content */}
-        <div className="why-right">
-          {/* Top Progress Line */}
-          {/* <div className="top-progress-bar">
-            <div className="top-progress-fill" style={{ width: `${progress}%` }} />
-          </div> */}
-
-          <h2>
-            {currentContent.heading}
-          </h2>
-          <p className="description">{currentContent.description}</p>
-          <div className="logo-row">
-            {currentContent.logos.map((logo, idx) => (
-              <img key={idx} src={logo} alt="certification" />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* TRUSTED PARTNERS SLIDER */}
-      <div className="trusted-partners">
-        <h2 className="trusted-title">Our Trusted <span style={{ color: "#f5c542" }}>Partners</span></h2>
-        <div className="slider">
-          <div className="slide-track">
-            {[...partners, ...partners].map((item, index) => (
-              <div className="slide" key={index}>
-                <img src={item.img} alt="partner logo" />
+          {/* RIGHT BOX - Dynamic Content */}
+          <Col lg={8} md={12}>
+            <div className="why-right">
+              <h2>{currentContent.heading}</h2>
+              <p className="description">{currentContent.description}</p>
+              <div className="logo-row">
+                {currentContent.logos.map((logo, idx) => (
+                  <img key={idx} src={logo} alt="certification" />
+                ))}
               </div>
-            ))}
+            </div>
+          </Col>
+        </Row>
+
+        {/* TRUSTED PARTNERS SLIDER */}
+        <div className="trusted-partners mt-5">
+          <h2 className="trusted-title text-center">
+            Our Trusted <span style={{ color: "#efbf04" }}>Partners</span>
+          </h2>
+          <div className="slider mt-4">
+            <div className="slide-track">
+              {[...partners, ...partners].map((item, index) => (
+                <div className="slide" key={index}>
+                  <img src={item.img} alt="partner logo" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
+      </Container>
     </section>
   );
 };

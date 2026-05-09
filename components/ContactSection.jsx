@@ -1,128 +1,145 @@
-// JourneyMap.jsx
 "use client";
-
 import React from "react";
-import "./ContactSection.css";
+import { Container } from "react-bootstrap";
 import Image from "next/image";
+import "./ContactSection.css";
 
 const timeline = [
   {
     year: "Oct 2017",
     text: "We Started Our Operations from Gohana, Haryana on 17th Oct 2017 & worked on a pilot test for early user feedback",
-    color: "#f5c542",
-
   },
   {
     year: "Dec 2018",
-    text: "Opened 2nd Office at Civil Lines, Jaipur, Rajasthan, & also formed a private limited company & finalized the name Vakilkaro.com",
-    color: "#f5c542",
+    text: "Opened 2nd Office at Civil Lines, Jaipur, Rajasthan & finalized the name Vakilkaro.com",
   },
   {
     year: "March 2021",
-    text: "Achieved a milestone of Rs. 1 crore revenue evidencing good management and timely services to customers.",
-    color: "#f5c542",
+    text: "Achieved a milestone of Rs. 1 crore revenue with timely customer services.",
   },
   {
     year: "March 2023",
-    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
-    color: "#f5c542",
+    text: "Completed 8,000+ subscribers on YouTube proving strong online presence.",
   },
   {
     year: "March 2024",
-    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
-    color: "#f5c542",
+    text: "Expanded services and improved customer experience with strong growth.",
   },
   {
     year: "March 2025",
-    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
-    color: "#f5c542",
+    text: "Reached new business milestones with nationwide legal support services.",
   },
   {
     year: "March 2026",
-    text: "Completed 8,000 plus subscribers on YouTube proving our strong online presence with doubled revenue.",
-    color: "#f5c542",
+    text: "Building India's most trusted legal-tech ecosystem with innovation.",
   },
 ];
 
 const JourneyMap = () => {
   return (
     <section className="journey-section">
-      <h1>OUR <span> STORY</span></h1>
 
-      {/* TOP CIRCLE */}
-      <div className="top-circle">
-        <div className="top-inner">
-          <Image
-            src="/logo.jpeg"
-            alt="Vakilkaro Logo"
-            width={120}
-            height={120}
-            className="top-logo-img"
-            priority
-          />
+      <Container fluid>
+
+        {/* HEADING */}
+        <div className="journey-heading">
+          <h1>
+            OUR <span>STORY</span>
+          </h1>
         </div>
-      </div>
 
-      {/* SVG LINES */}
-      {/* SVG LINES */}
-      <svg
-        className="timeline-svg"
-        viewBox="0 0 1600 320"
-        preserveAspectRatio="none"
-      >
+        {/* TOP LOGO */}
+        <div className="top-circle-wrapper">
+          <div className="top-circle">
 
-        {/* LEFT SIDE */}
-
-        {/* 1 */}
-        <path d="M800 20 L800 60 L120 60 L120 120" />
-
-        {/* 2 */}
-        <path d="M800 20 L800 70 L340 70 L340 130" />
-
-        {/* 3 */}
-        <path d="M800 20 L800 80 L560 80 L560 135" />
-
-        {/* CENTER */}
-        <path d="M800 20 L800 150" />
-
-        {/* RIGHT SIDE */}
-
-        {/* 5 */}
-        <path d="M800 20 L800 80 L1040 80 L1040 135" />
-
-        {/* 6 */}
-        <path d="M800 20 L800 70 L1260 70 L1260 130" />
-
-        {/* 7 */}
-        <path d="M800 20 L800 60 L1480 60 L1480 120" />
-
-      </svg>
-
-      {/* TIMELINE */}
-      <div className="timeline-row">
-        {timeline.map((item, index) => (
-          <div className="timeline-item" key={index}>
-
-            <div
-              className="circle"
-              style={{ background: item.color }}
-            >
-              <div className="circle-inner">
-                <h3>{item.year}</h3>
-              </div>
+            <div className="top-inner">
+              <Image
+                src="/logo.jpeg"
+                alt="Vakilkaro Logo"
+                width={120}
+                height={120}
+                className="top-logo-img"
+                priority
+              />
             </div>
 
-            <div
-              className="dot-line"
-              style={{ background: item.color }}
-            >
-              <span></span>
-            </div>
-
-            <p>{item.text}</p>
           </div>
-        ))}
-      </div>
+        </div>
+
+        {/* SVG LINES */}
+        <div className="svg-wrapper d-none d-lg-block">
+
+          <svg
+            className="timeline-svg"
+            viewBox="0 0 1600 220"
+            preserveAspectRatio="none"
+          >
+
+            {/* CENTER */}
+            <path d="M800 0 L800 50" />
+
+            {/* LEFT */}
+            <path d="M800 50 L120 50 L120 140" />
+            <path d="M800 50 L350 50 L350 140" />
+            <path d="M800 50 L580 50 L580 140" />
+
+            {/* RIGHT */}
+            <path d="M800 50 L1020 50 L1020 140" />
+            <path d="M800 50 L1250 50 L1250 140" />
+            <path d="M800 50 L1480 50 L1480 140" />
+
+          </svg>
+
+        </div>
+
+        {/* TIMELINE */}
+        <div className="timeline-wrapper">
+
+          <div className="timeline-row">
+
+            {timeline.map((item, index) => (
+
+              <div
+                className="timeline-col"
+                key={index}
+              >
+
+                <div
+                  className="timeline-item"
+                  style={{
+                    animationDelay: `${index * 0.2}s`,
+                  }}
+                >
+
+                  {/* CIRCLE */}
+                  <div className="circle">
+
+                    <div className="circle-inner">
+                      <h3>{item.year}</h3>
+                    </div>
+
+                  </div>
+
+                  {/* LINE */}
+                  <div className="dot-line">
+                    <span></span>
+                  </div>
+
+                  {/* TEXT */}
+                  <p>{item.text}</p>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </Container>
+
     </section>
   );
 };

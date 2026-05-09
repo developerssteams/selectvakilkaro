@@ -1,20 +1,11 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import Link from "next/link";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "./Header.css";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    useEffect(() => {
-        AOS.init({ duration: 1200, once: false });
-    }, []);
 
     useEffect(() => {
         import("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -29,10 +20,8 @@ function Header() {
     };
 
     return (
-        <>
-
-
-            <header className="rk-header">
+        <header className="rk-header">
+            <div className="container-fluid px-3 px-md-4">
                 <div className="rk-box">
                     {/* Logo */}
                     <div className="rk-left">
@@ -66,11 +55,10 @@ function Header() {
                         <button className="rk-login-btn">Log In</button>
                     </div>
 
-                    {/* Toggle Button - IMPROVED VERSION */}
+                    {/* Toggle Button */}
                     <button
                         className={`rk-toggle-btn ${menuOpen ? "active" : ""}`}
                         onClick={toggleMenu}
-                        aria-label="Toggle Menu"
                     >
                         <span className="toggle-icon">
                             <span className="toggle-line"></span>
@@ -84,14 +72,8 @@ function Header() {
                 <div className={`rk-mobile-menu ${menuOpen ? "open" : ""}`}>
                     <div className="mobile-menu-content">
                         <div className="mobile-search-box">
-                            <input
-                                type="text"
-                                placeholder="Search Services"
-                                className="rk-search-input"
-                            />
-                            <i className="ri-search-line rk-search-icon"></i>
+                            <input type="text" placeholder="Search Services" className="rk-search-input" />
                         </div>
-
                         <nav className="rk-nav-mobile">
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>About</a></div>
                             <div className="rk-menu-item"><Link href="/verified" onClick={closeMenu}>Verified Services</Link></div>
@@ -100,19 +82,13 @@ function Header() {
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Become Partner</a></div>
                             <div className="rk-menu-item"><a href="#" onClick={closeMenu}>Contact Us</a></div>
                         </nav>
-
-                        <button className="rk-login-btn mobile-login-btn" onClick={closeMenu}>
-                            Log In
-                        </button>
+                        <button className="rk-login-btn mobile-login-btn" onClick={closeMenu}>Log In</button>
                     </div>
                 </div>
 
-                {/* Overlay */}
                 {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
-            </header>
-
-
-        </>
+            </div>
+        </header>
     );
 }
 
