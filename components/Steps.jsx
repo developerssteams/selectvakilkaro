@@ -28,18 +28,26 @@ const steps = [
 export default function Steps() {
     return (
         <section className="itr-section">
+            <div className="container">
+
             <div className="itr-header">
-                <span className="badge">How it works</span>
+                <div className="row">
+                    <div className="col-md-10">
+                        <span className="badge">How it works</span>
 
-                <h1>
-                    4 Simple Steps to <span>File</span>
-                </h1>
-                <p style={{ color: "black" }}>Seeking legal help is a breeze with VakilKaro. Just a few clicks stand between you and expert guidance. Your solution is just a click away!</p>
+                        <h1>
+                            4 Simple Steps to <span>File</span>
+                        </h1>
+                        <p style={{ color: "black" }}>Seeking legal help is a breeze with VakilKaro. Just a few clicks stand between you and expert guidance. Your solution is just a click away!</p>
+                    </div>
+                    <div className="col-md-2 text-end">
 
-                <button className="file-btn">File Now</button>
-            </div>
+                        <button className="file-btn">File Now</button>
+                    </div>
+                </div>
+                
 
-            <div className="steps-container">
+                         <div className="steps-container">
 
                 {steps.map((step, index) => (
                     <div key={index} className="step-card">
@@ -57,6 +65,11 @@ export default function Steps() {
                         <p>{step.desc}</p>
                     </div>
                 ))}
+            </div>
+            </div>
+
+   
+            
             </div>
         </section>
     );

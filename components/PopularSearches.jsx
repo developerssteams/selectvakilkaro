@@ -7,7 +7,7 @@ function PopularSearches() {
     "Unified Portal", "PAN Card Download", "Flipkart Seller", "Caste Certificate", "IAY",
     "Udyog Aadhaar", "PF Withdrawal", "Instant PAN Card", "E PAN Card", "Income Certificate",
     "Marriage Certificate", "Passport Renewal", "MSME Registration", "Experience Certificate",
-    "Trademark Status", "Trade License", "eMitra","Resignation Letter Format", "Ration Card", "LLP Compliance", "Form 16",
+    "Trademark Status", "Trade License", "eMitra", "Resignation Letter Format", "Ration Card", "LLP Compliance", "Form 16",
     "eAadhaar Download", "Linking Aadhaar To Bank Accounts", "mAadhaar",
     "PAN Card Apply"
   ];

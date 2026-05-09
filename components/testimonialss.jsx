@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Partner.css";
+import "./testimonialss.css";
 
 const testimonials = [
   {
@@ -24,7 +24,7 @@ const testimonials = [
   },
 ];
 
-const Partner = () => {
+const testimonialss = () => {
   return (
     <section className="partner-section">
       <Container>
@@ -60,4 +60,4 @@ const Partner = () => {
   );
 };
 
-export default Partner;
+export default testimonialss;

@@ -2,7 +2,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Image from "next/image";
-import "./ContactSection.css";
+import "./JourneyMap.css";
 
 const timeline = [
   {
@@ -21,10 +21,10 @@ const timeline = [
     year: "March 2023",
     text: "Completed 8,000+ subscribers on YouTube proving strong online presence.",
   },
-  {
-    year: "March 2024",
-    text: "Expanded services and improved customer experience with strong growth.",
-  },
+  // {
+  //   year: "March 2024",
+  //   text: "Expanded services and improved customer experience with strong growth.",
+  // },
   {
     year: "March 2025",
     text: "Reached new business milestones with nationwide legal support services.",
@@ -39,7 +39,8 @@ const JourneyMap = () => {
   return (
     <section className="journey-section">
 
-      <Container fluid>
+      <div className="container ">
+<div className="jouney-inner">
 
         {/* HEADING */}
         <div className="journey-heading">
@@ -137,9 +138,9 @@ const JourneyMap = () => {
           </div>
 
         </div>
-
-      </Container>
-
+        
+</div>
+</div>
     </section>
   );
 };

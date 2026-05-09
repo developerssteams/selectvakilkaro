@@ -23,7 +23,7 @@ const services = [
   },
 ];
 
-const Journey = () => {
+const Professional = () => {
   return (
     <section className="support-section">
       <Container>
@@ -47,7 +47,7 @@ const Journey = () => {
                   <img src={item.img} alt={item.title} />
                   <span className="tag">✔ {item.tag}</span>
                 </div>
-                <h2>{item.title}</h2>
+                <h3>{item.title}</h3>
                 <p className="desc">{item.desc}</p>
                 <button className="btn">Consult Now</button>
               </div>
@@ -59,4 +59,4 @@ const Journey = () => {
   );
 };
 
-export default Journey;
+export default Professional;

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./LegalRepresentation.css";
+import "./Whychoose.css";
 
 // 4 Titles ka content
 const contentData = [
@@ -42,7 +42,7 @@ const partners = [
   { img: "https://www.vakilkaro.com/_next/static/media/Client-12.2842a11b.png" },
 ];
 
-const LegalRepresentation = () => {
+const Whychoose = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -138,7 +138,7 @@ const LegalRepresentation = () => {
           </h2>
           <div className="slider mt-4">
             <div className="slide-track">
-              {[...partners, ...partners].map((item, index) => (
+              {[...partners, ...partners, ...partners].map((item, index) => (
                 <div className="slide" key={index}>
                   <img src={item.img} alt="partner logo" />
                 </div>
@@ -151,4 +151,4 @@ const LegalRepresentation = () => {
   );
 };
 
-export default LegalRepresentation;
+export default Whychoose;

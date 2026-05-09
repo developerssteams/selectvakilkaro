@@ -2,11 +2,10 @@
 
 .why-section {
   padding: 60px 0;
-  background: #fff;
   color: white;
   position: relative;
   overflow: hidden;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .why-section::before {
@@ -187,7 +186,8 @@
 .trusted-partners {
   margin-top: 50px;
   padding: 50px 0;
-  background: #f8f9fa;
+  background: white;
+
   border-radius: 24px;
   border: 1px solid #e0e0e0;
 }
@@ -206,42 +206,65 @@
 
 /* SLIDER */
 .slider {
+  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .slide-track {
   display: flex;
-  width: calc(180px * 12);
-  animation: scroll 20s linear infinite;
+  animation: scroll 2s linear infinite;
+  margin-top: 5px;
+  align-items: center;
+  width: max-content;
+
+  /* smooth infinite scroll */
+  animation: scroll 25s linear infinite;
 }
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
 
 .slide {
   width: 160px;
   height: 80px;
   margin: 0 12px;
+
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: white;
   border-radius: 16px;
   border: 1px solid #e0e0e0;
+
   transition: 0.3s;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 
 .slide img {
   max-width: 100px;
   max-height: 40px;
   object-fit: contain;
+
   filter: grayscale(100%);
   opacity: 0.6;
+
   transition: 0.3s;
 }
+
 
 .slide:hover {
   transform: translateY(-5px);
   background: rgba(245, 158, 11, 0.05);
   border-color: #efbf04;
+
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -254,8 +277,9 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50%));
   }
 }
 
@@ -271,6 +295,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -282,7 +307,7 @@
   .why-top h1 {
     font-size: 36px;
   }
-  
+
   .trusted-title {
     font-size: 28px;
   }
@@ -292,62 +317,63 @@
   .why-section {
     padding: 40px 0;
   }
-  
+
   .why-top h1 {
     font-size: 28px;
   }
-  
+
   .why-top p {
     font-size: 14px;
   }
-  
+
   .why-right h2 {
     font-size: 22px;
   }
-  
+
   .description {
     font-size: 14px;
   }
-  
+
   .logo-row img {
     width: 55px;
     height: 55px;
   }
-  
+
   .slide {
     width: 130px;
     height: 70px;
   }
-  
+
   .slide img {
     max-width: 80px;
   }
-  
+
   .trusted-title {
     font-size: 24px;
   }
 }
 
 @media (max-width: 576px) {
+
   .why-left,
   .why-right {
     padding: 20px;
   }
-  
+
   .why-item p {
     font-size: 14px;
   }
-  
+
   .why-item span {
     width: 40px;
     height: 40px;
     font-size: 18px;
   }
-  
+
   .why-right h2 {
     font-size: 20px;
   }
-  
+
   .trusted-partners {
     padding: 30px 0;
   }

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Container, Row, Col } from "react-bootstrap";
-import "./VerifiedServices.css";
+import "./Servicess.css";
 
 const services = [
   {
@@ -23,7 +23,7 @@ const services = [
   },
 ];
 
-const VerifiedServices = () => {
+const Servicess = () => {
   const [active, setActive] = useState(0);
 
   return (
@@ -61,7 +61,7 @@ const VerifiedServices = () => {
 
         {/* TOP CARDS - Mobile Dropdown */}
         <div className="d-md-none mt-4">
-          <select 
+          <select
             className="form-select vs-mobile-select"
             value={active}
             onChange={(e) => setActive(parseInt(e.target.value))}
@@ -91,4 +91,4 @@ const VerifiedServices = () => {
   );
 };
 
-export default VerifiedServices;
+export default Servicess;

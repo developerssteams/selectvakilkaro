@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fff;
+    background: whitesmoke !important;
     overflow-x: hidden;
 }
 
@@ -35,7 +35,7 @@ body {
     width: 100%;
     background: transparent;
     position: fixed;
-    top: 0;
+    top: 10;
     left: 0;
     z-index: 1000;
     padding: 5px 14px;
@@ -118,7 +118,8 @@ body {
 }
 
 .rk-login-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: #efbf04;
+    color: #000;
 }
 
 /* Toggle Button */
@@ -594,7 +595,7 @@ body {
 
 .support-section {
     padding: 60px 0;
-    background: #f8f9fa;
+    background: whitesmoke;
 }
 
 .support-card {
@@ -617,6 +618,8 @@ body {
     overflow: hidden;
     border-radius: 12px;
 }
+
+
 
 .img-box img {
     width: 100%;
@@ -809,8 +812,8 @@ body {
 /* =================================================== */
 
 .news-section {
-    padding: 60px 0;
-    background: #f8f9fa;
+    padding: 0px 0;
+    background: whitesmoke;
 }
 
 .news-heading h2 {
@@ -842,7 +845,7 @@ body {
 
 .news-img-wrapper img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -861,6 +864,7 @@ body {
 .news-content {
     padding: 20px;
 }
+
 .news-content p {
     color: black;
 
