@@ -1,6 +1,6 @@
 "use client";
 import { Container, Row, Col } from "react-bootstrap";
-// import "./Journey.css";
+import "./Professional.css";
 
 const services = [
   {
