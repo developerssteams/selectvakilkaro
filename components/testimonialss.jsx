@@ -24,7 +24,7 @@ const testimonials = [
   },
 ];
 
-const testimonialss = () => {
+const Testimonialss = () => {
   return (
     <section className="partner-section">
       <Container>
@@ -60,4 +60,4 @@ const testimonialss = () => {
   );
 };
 
-export default testimonialss;
+export default Testimonialss;
