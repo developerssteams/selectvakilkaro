@@ -32,8 +32,7 @@ export default function PVT() {
             {/* Optional */}
             {/* <Story /> */}
 
-            <Testimonials />
-            <ContactSection />
+         
             <Faq />
 
             <TawkTo />

@@ -27,8 +27,7 @@ export default function Verified() {
             {/* Optional */}
             {/* <Story /> */}
 
-            <Testimonials />
-            <ContactSection />
+          
             <Faq />
             <TawkTo />
             <Footer />

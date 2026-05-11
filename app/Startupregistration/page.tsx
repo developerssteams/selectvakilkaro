@@ -33,8 +33,7 @@ export default function Startupregistration() {
             {/* Optional */}
             {/* <Story /> */}
 
-            <Testimonials />
-            <ContactSection />
+          
             <Faq />
 
             <TawkTo />
