@@ -1,9 +1,7 @@
 "use client";
 
 import TawkTo from "@/components/TawkTo";
-import Story from "@/components/Story";
-import Testimonials from "@/components/Testimonials";
-import ContactSection from "@/components/ContactSection";
+
 import Faq from "@/components/Faq";
 import Query_Card from "@/components/Query_Card";
 import Trademark_Registration from "@/components/Trademark_Registration";
