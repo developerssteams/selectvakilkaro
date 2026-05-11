@@ -56,7 +56,7 @@ const NewsSection = () => {
                                 {/* IMAGE WRAPPER */}
                                 <div className="news-img-wrapper">
                                     <img src={`${item.img}?auto=format&fit=crop&w=800&q=80`} alt="news" />
-                                    
+
                                     {/* DATE BADGE */}
                                     <div className="news-date">
                                         30 <br /> Nov <br /> 2021

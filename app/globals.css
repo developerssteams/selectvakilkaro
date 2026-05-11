@@ -593,10 +593,10 @@ body {
 /* ================= JOURNEY COMPONENT =============== */
 /* =================================================== */
 
-.support-section {
+/* .support-section {
     padding: 60px 0;
     background: whitesmoke;
-}
+} */
 
 .support-card {
     background: #fff;
@@ -871,7 +871,7 @@ body {
 }
 
 .news-read {
-    color: #efbf04;
+    color: black;
     font-weight: 600;
     cursor: pointer;
 }

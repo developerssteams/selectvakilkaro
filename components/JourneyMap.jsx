@@ -40,107 +40,107 @@ const JourneyMap = () => {
     <section className="journey-section">
 
       <div className="container ">
-<div className="jouney-inner">
+        <div className="jouney-inner">
 
-        {/* HEADING */}
-        <div className="journey-heading">
-          <h1>
-            OUR <span>STORY</span>
-          </h1>
-        </div>
+          {/* HEADING */}
+          <div className="journey-heading">
+            <h1>
+              OUR <span>STORY</span>
+            </h1>
+          </div>
 
-        {/* TOP LOGO */}
-        <div className="top-circle-wrapper">
-          <div className="top-circle">
+          {/* TOP LOGO */}
+          <div className="top-circle-wrapper">
+            <div className="top-circle">
 
-            <div className="top-inner">
-              <Image
-                src="/logo.jpeg"
-                alt="Vakilkaro Logo"
-                width={120}
-                height={120}
-                className="top-logo-img"
-                priority
-              />
+              <div className="top-inner">
+                <Image
+                  src="/logo.jpeg"
+                  alt="Vakilkaro Logo"
+                  width={120}
+                  height={120}
+                  className="top-logo-img"
+                  priority
+                />
+              </div>
+
             </div>
+          </div>
+
+          {/* SVG LINES */}
+          <div className="svg-wrapper d-none d-lg-block">
+
+            <svg
+              className="timeline-svg"
+              viewBox="0 0 1600 220"
+              preserveAspectRatio="none"
+            >
+
+              {/* CENTER */}
+              <path d="M800 0 L800 50" />
+
+              {/* LEFT */}
+              <path d="M800 50 L120 50 L120 140" />
+              <path d="M800 50 L350 50 L350 140" />
+              <path d="M800 50 L580 50 L580 140" />
+
+              {/* RIGHT */}
+              <path d="M800 50 L1020 50 L1020 140" />
+              <path d="M800 50 L1250 50 L1250 140" />
+              <path d="M800 50 L1480 50 L1480 140" />
+
+            </svg>
 
           </div>
-        </div>
 
-        {/* SVG LINES */}
-        <div className="svg-wrapper d-none d-lg-block">
+          {/* TIMELINE */}
+          <div className="timeline-wrapper">
 
-          <svg
-            className="timeline-svg"
-            viewBox="0 0 1600 220"
-            preserveAspectRatio="none"
-          >
+            <div className="timeline-row">
 
-            {/* CENTER */}
-            <path d="M800 0 L800 50" />
-
-            {/* LEFT */}
-            <path d="M800 50 L120 50 L120 140" />
-            <path d="M800 50 L350 50 L350 140" />
-            <path d="M800 50 L580 50 L580 140" />
-
-            {/* RIGHT */}
-            <path d="M800 50 L1020 50 L1020 140" />
-            <path d="M800 50 L1250 50 L1250 140" />
-            <path d="M800 50 L1480 50 L1480 140" />
-
-          </svg>
-
-        </div>
-
-        {/* TIMELINE */}
-        <div className="timeline-wrapper">
-
-          <div className="timeline-row">
-
-            {timeline.map((item, index) => (
-
-              <div
-                className="timeline-col"
-                key={index}
-              >
+              {timeline.map((item, index) => (
 
                 <div
-                  className="timeline-item"
-                  style={{
-                    animationDelay: `${index * 0.2}s`,
-                  }}
+                  className="timeline-col"
+                  key={index}
                 >
 
-                  {/* CIRCLE */}
-                  <div className="circle">
+                  <div
+                    className="timeline-item"
+                    style={{
+                      animationDelay: `${index * 0.2}s`,
+                    }}
+                  >
 
-                    <div className="circle-inner">
-                      <h3>{item.year}</h3>
+                    {/* CIRCLE */}
+                    <div className="circle">
+
+                      <div className="circle-inner">
+                        <h3>{item.year}</h3>
+                      </div>
+
                     </div>
 
-                  </div>
+                    {/* LINE */}
+                    <div className="dot-line">
+                      <span></span>
+                    </div>
 
-                  {/* LINE */}
-                  <div className="dot-line">
-                    <span></span>
-                  </div>
+                    {/* TEXT */}
+                    <p>{item.text}</p>
 
-                  {/* TEXT */}
-                  <p>{item.text}</p>
+                  </div>
 
                 </div>
 
-              </div>
+              ))}
 
-            ))}
+            </div>
 
           </div>
 
         </div>
-        
-</div>
-</div>
+      </div>
     </section>
   );
 };

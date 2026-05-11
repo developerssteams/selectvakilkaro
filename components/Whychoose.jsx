@@ -46,7 +46,7 @@ const Whychoose = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  const DURATION = 5000;
+  const DURATION = 3000;
 
   useEffect(() => {
     setProgress(0);
