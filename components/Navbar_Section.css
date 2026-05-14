@@ -1,118 +1,352 @@
-.category-section {
-  /* background: #212121; */
-  padding: 10px;
-  margin-top: 90px;
+/* =================================================== */
+/* ================= HEADER COMPONENT ================ */
+/* =================================================== */
+
+.rk-header {
+  width: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 10px 14px;
 }
 
-.category-box {
-  background: #eaeaea;
-  max-width: 1200px;
-  margin: auto;
+.rk-box {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #191919;
   border-radius: 20px;
-  padding: 20px;
-  position: relative;
-}
-
-.category-list {
+  border: 1px solid #a9a6a6;
+  padding: 16px 30px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: static;
+  position: relative;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
 }
 
-.category-list li {
+.rk-logo {
+  width: 120px;
+}
+
+/* Desktop Navigation */
+.rk-nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.rk-nav-desktop a {
+  color: #eaeaea;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.rk-nav-desktop a:hover {
+  color: #fff;
+}
+
+.rk-menu-item.pill-btn a {
+  padding: 6px 16px;
+  border-radius: 30px;
+  background: #fff;
+  color: #000;
+}
+
+/* Right Section */
+.rk-right-desktop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rk-search-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #555;
+  padding-bottom: 4px;
+}
+
+.rk-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 12px;
+  width: 150px;
+}
+
+.rk-login-btn {
+  padding: 8px 24px;
+  border: 1.5px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 12px;
   font-size: 14px;
   cursor: pointer;
-  position: relative;
+  transition: all 0.3s ease;
 }
 
-/* 🔥 MEGA MENU */
-.mega-menu {
+.rk-login-btn:hover {
+  background: #efbf04;
+  color: #000;
+}
+
+/* Toggle Button */
+.rk-toggle-btn {
   position: absolute;
-  top: 90px;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3000;
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 10px;
+  width: 60px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.toggle-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  margin: 0 auto;
+}
+
+.toggle-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.rk-toggle-btn.active .toggle-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.rk-toggle-btn.active .toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.rk-toggle-btn.active .toggle-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.rk-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #000;
+  z-index: 2000;
+  transition: right 0.4s ease-in-out;
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.rk-mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-content {
+  padding: 80px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.rk-nav-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rk-nav-mobile a {
+  color: #eaeaea;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1500;
+}
+
+/* =================================================== */
+/* ================= VERIFIED MEGA MENU ============== */
+/* =================================================== */
+
+
+.verified-menu-trigger {
+  position: relative;
+  cursor: pointer;
+
+}
+
+/* ===== MAIN POPUP ===== */
+.verified-mega-menu {
+  position: fixed;
+  top: 88px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-}
-
-
-/* LEFT SIDE */
-.menu-left {
-  display: flex;
-  flex: 2;
-  gap: 40px;
-}
-
-.menu-column p {
-  margin: 10px 0;
-  font-size: 12px;
-  cursor: pointer;
-  color: black;
-}
-
-.menu-column p:hover {
-  color: #007bff;
-}
-
-/* RIGHT IMAGE */
-.menu-right {
-  flex: 1;
-}
-
-.menu-right img {
   width: 100%;
+  max-width: 880px;
+  background: #f3f3f3;
+  border-radius: 16px;
+  padding: 14px;
+  z-index: 999;
+  animation: megaFade 0.25s ease;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d9d9d9;
+}
+
+/* animation */
+@keyframes megaFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ===== INNER LAYOUT ===== */
+.mega-menu-content {
+  display: flex;
+  gap: 14px;
+  min-height: 460px;
+}
+
+/* =================================================== */
+/* ================= LEFT SIDE MENU ================== */
+/* =================================================== */
+
+.mega-sidebar {
+  width: 240px;
+  background: #ececec;
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* sidebar item */
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 14px;
   border-radius: 10px;
-  height: 220px;
-  object-fit: cover;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.sidebar-item:hover {
+  background: #ffffff;
+}
+
+.sidebar-item.active {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* right arrow */
+.sidebar-item span:last-child {
+  font-size: 18px;
+  color: #222;
+}
+
+/* =================================================== */
+/* ================= RIGHT CONTENT =================== */
+/* =================================================== */
+
+.mega-content {
+  flex: 1;
+  background: #ececec;
+  border-radius: 12px;
+  padding: 26px 34px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 60px;
+  row-gap: 22px;
+
+  align-content: start;
+}
+
+/* service item */
+.mega-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  transition: 0.2s ease;
+  line-height: 1.4;
+}
+
+.mega-link:hover {
+  color: #efbf04;
+  transform: translateX(3px);
 }
 
 
-/* MOBILE VIEW */
+/* =================================================== */
+/* ================= RESPONSIVE ====================== */
+/* =================================================== */
+
+@media (max-width: 992px) {
+
+  .verified-mega-menu {
+    max-width: 95%;
+  }
+
+  .mega-menu-content {
+    flex-direction: column;
+  }
+
+  .mega-sidebar {
+    width: 100%;
+  }
+
+  .mega-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+}
+
 @media (max-width: 768px) {
 
-  .category-list {
-    flex-direction: column;
-    gap: 10px;
+  .verified-mega-menu {
+    display: none;
   }
-
-  .category-list li {
-    padding: 12px;
-    background: #fff;
-    border-radius: 10px;
-    font-weight: 500;
-  }
-
-  /* MEGA MENU RESET */
-  .mega-menu {
-    position: static;
-    transform: none;
-    width: 100%;
-    box-shadow: none;
-    padding: 10px 0;
-    margin-top: 5px;
-  }
-
-  .menu-left {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .menu-column {
-    background: #f5f5f5;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  .menu-column p {
-    font-size: 13px;
-    padding: 5px 0;
-  }
-
 }

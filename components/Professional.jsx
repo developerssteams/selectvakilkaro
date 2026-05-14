@@ -1,6 +1,6 @@
 "use client";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Professional.css";
+// import "./Professional.css";
 
 const services = [
   {
@@ -21,6 +21,18 @@ const services = [
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
     tag: "200+ CS",
   },
+];
+
+
+const brands = [
+  "coda",
+  "inter",
+  "ATLASSIAN",
+  "ClickTravel",
+  "Notion",
+  "etoro",
+  "H&R BLOCK",
+  "conl",
 ];
 
 const Professional = () => {
@@ -49,11 +61,26 @@ const Professional = () => {
                 </div>
                 <h3>{item.title}</h3>
                 <p className="desc">{item.desc}</p>
-                <button className="btn">Consult Now</button>
+                <button className="btnn">Consult Now</button>
               </div>
             </Col>
           ))}
         </Row>
+        <div className="brands-wrapper">
+
+          <p className="brands-heading">
+            TRUSTED BY +25,000 BUSSINESSES
+          </p>
+
+          <div className="brands-row">
+            {brands.map((brand, index) => (
+              <div className="brand-item" key={index}>
+                {brand}
+              </div>
+            ))}
+          </div>
+
+        </div>
       </Container>
     </section>
   );

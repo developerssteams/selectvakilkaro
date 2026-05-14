@@ -1,76 +1,97 @@
 "use client";
+
 import React from "react";
 import "./Steps.css";
 
 const steps = [
-    {
-        title: "Request a Quote",
-        desc: "Fill out our consultation form. Our specialists will provide personalized advice for your legal needs.",
-        icon: "📝",
-    },
-    {
-        title: "Document Submission",
-        desc: "Submit the necessary documents through our secure portal for swift and accurate legal processing.",
-        icon: "📂",
-    },
-    {
-        title: "Payment Processing",
-        desc: "Experience seamless and secure payments through our reliable gateway for hassle-free transactions.",
-        icon: "💳",
-    },
-    {
-        title: "Receive your Work",
-        desc: "Our team ensures timely completion and delivers legal documents as per deadlines.",
-        icon: "📦",
-    },
+  {
+    step: "Step 1",
+    title: "Consultation",
+    desc: "Fill out our consultation form. Our specialists will provide personalized advice for your legal needs.",
+    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    step: "Step 2",
+    title: "Verification",
+    desc: "Submit the necessary documents through our secure portal for swift and accurate legal processing.",
+    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    step: "Step 3",
+    title: "Execution",
+    desc: "Experience seamless and secure payments through our reliable gateway for hassle-free transactions.",
+    img: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    step: "Step 4",
+    title: "Delivery",
+    desc: "Our team ensures timely completion and delivers legal documents as per deadlines.",
+    img: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop",
+  },
 ];
 
 export default function Steps() {
-    return (
-        <section className="itr-section">
-            <div className="container">
+  return (
+    <section className="work-section">
+      <div className="container-fluid bg-white p-5" >
 
-            <div className="itr-header">
-                <div className="row">
-                    <div className="col-md-10">
-                        <span className="badge">How it works</span>
+        {/* TOP SECTION */}
+        <div className="row align-items-start work-top">
 
-                        <h1>
-                            4 Simple Steps to <span>File</span>
-                        </h1>
-                        <p style={{ color: "black" }}>Seeking legal help is a breeze with VakilKaro. Just a few clicks stand between you and expert guidance. Your solution is just a click away!</p>
-                    </div>
-                    <div className="col-md-2 text-end">
+          <div className="col-lg-7 mb-4 mb-lg-0">
+            <h2 className="work-heading">
+              How Vakilkaro <br /> Works
+            </h2>
+          </div>
 
-                        <button className="file-btn">File Now</button>
-                    </div>
+          <div className="col-lg-5">
+            <div className="work-content">
+              <p>
+                Manage your experience from start to finish, from integrations
+                to registration and from interactive stage elements to
+                post-event data, it’s all here.
+              </p>
+
+              <button className="package-btn">
+                View Package
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        {/* CARDS */}
+        <div className="row g-4">
+
+          {steps.map((item, index) => (
+            <div className="col-lg-3 col-md-6" key={index}>
+
+              <div className="work-card">
+
+                {/* IMAGE */}
+                <div className="work-image">
+                  <img src={item.img} alt={item.title} />
                 </div>
-                
 
-                         <div className="steps-container">
+                {/* STEP */}
+                <span className="step-text">{item.step}</span>
 
-                {steps.map((step, index) => (
-                    <div key={index} className="step-card">
+                {/* TITLE */}
+                <div className="title-row">
+                  <h3>{item.title}</h3>
+                  <span className="arrow">↗</span>
+                </div>
 
-                        {/* LINE */}
-                        {index !== 0 && <div className="line"></div>}
+                {/* DESC */}
+                <p>{item.desc}</p>
 
-                        {/* ICON + DOT */}
-                        <div className="icon-wrapper">
-                            <div className="icon">{step.icon}</div>
-                            <div className="dot"></div>
-                        </div>
+              </div>
 
-                        <h3>{step.title}</h3>
-                        <p>{step.desc}</p>
-                    </div>
-                ))}
             </div>
-            </div>
+          ))}
 
-   
-            
-            </div>
-        </section>
-    );
+        </div>
+      </div>
+    </section>
+  );
 }

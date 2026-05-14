@@ -3,43 +3,118 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Whychoose.css";
 
-// 4 Titles ka content
 const contentData = [
   {
     title: "LARGEST NETWORK",
-    icon: "₹",
-    heading: "Obtain Authorization from Government Regulatory Authorities",
-    description: "Get your business registered and authorized by the government with our expert network of 5000+ legal professionals.",
-    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+    icon: "⌘",
+    description:
+      "Affordable pricing with premium quality legal solutions for startups and businesses",
+
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+
+    topics: [
+      {
+        title: "Practical Business Guidance",
+        progress: 100,
+        color: "#2f37ff",
+      },
+      {
+        title: "Network of Professionals",
+        progress: 90,
+        color: "#37b24d",
+      },
+      {
+        title: "Dedicated Relationship Support",
+        progress: 100,
+        color: "#a61eeb",
+      },
+    ],
   },
+
   {
     title: "BEST PRICE GUARANTEE",
-    icon: "📄",
-    heading: "Affordable Legal Services with Price Match Guarantee",
-    description: "Found a lower price elsewhere? We'll match it. Quality legal services at the best rates in the industry.",
-    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+    icon: "⌘",
+    description:
+      "Affordable pricing with premium quality legal solutions for startups and businesses.",
+
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop",
+
+    topics: [
+      {
+        title: "Affordable Service Pricing",
+        progress: 95,
+        color: "#ff6b00",
+      },
+      {
+        title: "Transparent Costing",
+        progress: 92,
+        color: "#20c997",
+      },
+      {
+        title: "Premium Value Delivery",
+        progress: 98,
+        color: "#845ef7",
+      },
+    ],
   },
+
   {
     title: "PROFESSIONAL TEAM",
-    icon: "🎧",
-    heading: "Expert Lawyers & Chartered Accountants at Your Service",
-    description: "Our team of experienced professionals ensures your compliance and legal needs are handled with precision.",
-    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
+    icon: "⌘",
+    description:
+      "Experienced legal experts and professionals helping your business grow smoothly.",
+
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+
+    topics: [
+      {
+        title: "Experienced Legal Experts",
+        progress: 100,
+        color: "#228be6",
+      },
+      {
+        title: "Business Compliance Team",
+        progress: 93,
+        color: "#40c057",
+      },
+      {
+        title: "Client Satisfaction",
+        progress: 99,
+        color: "#be4bdb",
+      },
+    ],
   },
+
   {
     title: "24/7 SUPPORT",
-    icon: "⏱",
-    heading: "Round the Clock Legal Assistance & Query Resolution",
-    description: "Need help anytime? Our support team is available 24/7 to answer your questions and guide you.",
-    logos: ["/iso.jpeg", "/iso.jpeg", "/iso.jpeg", "/iso.jpeg"]
-  }
-];
+    icon: "⌘",
+    description:
+      "Round the clock support system for all your legal and business requirements.",
 
-const partners = [
-  { img: "https://www.vakilkaro.com/_next/static/media/Client-1.76ed41a6.png" },
-  { img: "https://www.vakilkaro.com/_next/static/media/Client-6.3e6fc804.png" },
-  { img: "https://www.vakilkaro.com/_next/static/media/Client-1.76ed41a6.png" },
-  { img: "https://www.vakilkaro.com/_next/static/media/Client-12.2842a11b.png" },
+    image:
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800&auto=format&fit=crop",
+
+    topics: [
+      {
+        title: "Instant Query Resolution",
+        progress: 100,
+        color: "#364fc7",
+      },
+      {
+        title: "Customer Assistance",
+        progress: 97,
+        color: "#2b8a3e",
+      },
+      {
+        title: "Always Available Team",
+        progress: 100,
+        color: "#9c36b5",
+      },
+    ],
+  },
 ];
 
 const Whychoose = () => {
@@ -50,6 +125,7 @@ const Whychoose = () => {
 
   useEffect(() => {
     setProgress(0);
+
     const startTime = Date.now();
 
     const interval = setInterval(() => {
@@ -58,9 +134,11 @@ const Whychoose = () => {
 
       if (newProgress >= 100) {
         setProgress(100);
+
         setTimeout(() => {
           setActiveIndex((prev) => (prev + 1) % contentData.length);
-        }, 50);
+        }, 100);
+
         clearInterval(interval);
       } else {
         setProgress(newProgress);
@@ -74,79 +152,96 @@ const Whychoose = () => {
 
   return (
     <section className="why-section">
-      <Container>
-        {/* HEADER */}
-        <div className="why-top text-center">
-          <h1>
-            Why Thousands Trust <span style={{ color: "#efbf04", fontWeight: "700" }}>VakilKaro</span> ?
-          </h1>
-          <p className="mx-auto" style={{ maxWidth: "700px" }}>
-            Choose Vakilkaro for unmatched legal expertise, premium experience and a
-            strong professional network that ensures your business grows without legal hurdles.
-          </p>
-        </div>
+      <div className="container-fluid bg-white p-5">
 
-        {/* MAIN CONTENT */}
-        <Row className="why-container mt-5">
-          {/* LEFT BOX - 4 Titles */}
-          <Col lg={4} md={12} className="mb-4 mb-lg-0">
-            <div className="why-left">
-              {contentData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`why-item ${activeIndex === index ? "active" : ""}`}
-                  onClick={() => {
-                    setActiveIndex(index);
-                    setProgress(0);
-                  }}
-                >
-                  <p>
-                    <span>{item.icon}</span>
-                    {item.title}
-                  </p>
-                  {activeIndex === index && (
-                    <div className="item-progress-bar">
-                      <div
-                        className="item-progress-fill"
-                        style={{ width: `${progress}%` }}
-                      />
+        <div className="why-wrapper">
+          {/* TOP */}
+          <div className="why-top">
+            <h1>
+              Why Thousands Trust <span>VakilKaro ?</span>
+            </h1>
+          </div>
+
+          <Row className="align-items-center gy-4">
+            {/* LEFT SIDE */}
+            <Col lg={4}>
+              <div className="why-left">
+                {contentData.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`why-item ${activeIndex === index ? "active" : ""
+                      }`}
+                    onClick={() => {
+                      setActiveIndex(index);
+                      setProgress(0);
+                    }}
+                  >
+                    <div className="why-item-top">
+                      <span className="icon-box">{item.icon}</span>
+
+                      <h3>{item.title}</h3>
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Col>
 
-          {/* RIGHT BOX - Dynamic Content */}
-          <Col lg={8} md={12}>
-            <div className="why-right">
-              <h2>{currentContent.heading}</h2>
-              <p className="description">{currentContent.description}</p>
-              <div className="logo-row">
-                {currentContent.logos.map((logo, idx) => (
-                  <img key={idx} src={logo} alt="certification" />
+                    {activeIndex === index && (
+                      <div className="progress-line">
+                        <div
+                          className="progress-fill"
+                          style={{ width: `${progress}%` }}
+                        />
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
-            </div>
-          </Col>
-        </Row>
+            </Col>
 
-        {/* TRUSTED PARTNERS SLIDER */}
-        <div className="trusted-partners mt-5">
-          <h2 className="trusted-title text-center">
-            Our Trusted <span style={{ color: "#efbf04" }}>Partners</span>
-          </h2>
-          <div className="slider mt-4">
-            <div className="slide-track">
-              {[...partners, ...partners, ...partners].map((item, index) => (
-                <div className="slide" key={index}>
-                  <img src={item.img} alt="partner logo" />
+            {/* MIDDLE */}
+            <Col lg={5}>
+              <div className="why-middle">
+                <p className="middle-desc">{currentContent.description}</p>
+
+                <div className="topics-box">
+                  <h4>Strongest Topics</h4>
+
+                  {currentContent.topics.map((topic, idx) => (
+                    <div className="topic-item" key={idx}>
+                      <div className="topic-top">
+                        <div className="topic-left">
+                          <img
+                            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                            alt=""
+                          />
+
+                          <span>{topic.title}</span>
+                        </div>
+
+                        <strong>{topic.progress}%</strong>
+                      </div>
+
+                      <div className="topic-progress">
+                        <div
+                          className="topic-fill"
+                          style={{
+                            width: `${topic.progress}%`,
+                            background: topic.color,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            </Col>
+
+            {/* RIGHT IMAGE */}
+            <Col lg={3}>
+              <div className="why-image">
+                <img src={currentContent.image} alt="why choose" />
+              </div>
+            </Col>
+          </Row>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

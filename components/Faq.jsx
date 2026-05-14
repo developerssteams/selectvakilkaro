@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Faq.css";
+// import "./Faq.css";
 
 const faqs = [
   {

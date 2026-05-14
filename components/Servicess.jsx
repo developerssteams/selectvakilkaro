@@ -1,25 +1,60 @@
 "use client";
+
 import { useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiCommand, FiFileText } from "react-icons/fi";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Servicess.css";
+// import "./Servicess.css";
 
 const services = [
   {
-    title: "Business Registration",
-    content: ["Private Limited Company Registration", "Limited Liability Partnership Registration", "One Person Company Registration", "Sole Proprietorship Registration", "Producer Company Registration", "Partnership Firm Registration", "Startup India Registration", "NGO Registration", "Fundraising for startup"],
+    title: "Company\nRegistration",
+    content: [
+      "Private Limited Company Registration",
+      "Limited Liability Partnership Registration",
+      "One Person Company Registration",
+      "Sole Proprietorship Registration",
+      "Producer Company Registration",
+      "Partnership Firm Registration",
+      "Startup India Registration",
+      "NGO Registration",
+      "Fundraising for startup",
+    ],
   },
+
   {
-    title: "Licenses & Certificate",
-    content: ["GST Filing", "Income Tax Filing", "ROC Compliance"],
+    title: "Tax\nServices",
+    content: [
+      "GST Filing",
+      "Income Tax Filing",
+      "ROC Compliance",
+      "TDS Return Filing",
+      "Accounting Services",
+      "Tax Consultation",
+    ],
   },
+
   {
-    title: "Trademark & IP",
-    content: ["Trademark Registration", "Copyright Registration", "Patent Registration", "IP Infringement", "Design Registration", "Free Legal Documents", "Business Contracts"],
+    title: "Trademark\nRegistration",
+    content: [
+      "Trademark Registration",
+      "Copyright Registration",
+      "Patent Registration",
+      "IP Infringement",
+      "Design Registration",
+      "Legal Documents",
+    ],
   },
+
   {
-    title: "Legal & Compliance",
-    content: ["GST Registration", "Change Company Address", "Director Replacement", "Mandatory Annual Filings", "Labour Compliance", "Shop and Establishment License", "Accounting & Tax"],
+    title: "License/\nCertificate",
+    content: [
+      "GST Registration",
+      "Company Address Change",
+      "Director Replacement",
+      "Annual Filings",
+      "Labour Compliance",
+      "Accounting & Tax",
+    ],
   },
 ];
 
@@ -28,62 +63,94 @@ const Servicess = () => {
 
   return (
     <section className="vs-section">
-      <Container>
-        {/* Header Section */}
-        <div className="text-center">
-          <h1 className="hhh">
-            From Startup to Scale-Up — We Power Your
-            <span className="highlightt"> Growth</span>
-          </h1>
-          <p className="hhhh mx-auto">
-            All-in-one platform for legal consultation, business setup, and compliance solutions.
-          </p>
-        </div>
+      <Container fluid>
+        <div className="vs-wrapper">
+          {/* HEADING */}
+          <div className="text-center">
+            <h1 className="hhh">
+              From Startup to Scale-Up —{" "}
+              <span className="highlightt">
+                We
+                <br />
+                Power Your Growth.
+              </span>
+            </h1>
 
-        {/* TOP CARDS - Desktop */}
-        <Row className="vs-top d-none d-md-flex mt-5">
-          {services.map((item, i) => (
-            <Col key={i} md={3}>
-              <div
-                className={`vs-top-card ${active === i ? "active" : ""}`}
-                onMouseEnter={() => setActive(i)}
-              >
-                <h3>
-                  {item.title}
-                  <span className="vs-arrow">
-                    <FiArrowUpRight />
-                  </span>
-                </h3>
-              </div>
-            </Col>
-          ))}
-        </Row>
-
-        {/* TOP CARDS - Mobile Dropdown */}
-        <div className="d-md-none mt-4">
-          <select
-            className="form-select vs-mobile-select"
-            value={active}
-            onChange={(e) => setActive(parseInt(e.target.value))}
-          >
-            {services.map((item, i) => (
-              <option key={i} value={i}>{item.title}</option>
-            ))}
-          </select>
-        </div>
-
-        {/* BOTTOM PANEL */}
-        <div className="vs-bottom mt-4">
-          <div className="vs-bottom-left">
-            <p>✔ 100% Safety</p>
-            <p>✔ Fast Service</p>
-            <p>✔ Protected Documents</p>
+            <p className="hhhh mx-auto">
+              All-in-one platform for online legal consultation, business
+              incorporation, corporate compliance, and startup-friendly
+              solutions—tailored for every industry.
+            </p>
           </div>
 
-          <div className="vs-bottom-right">
-            {services[active].content.map((item, i) => (
-              <p key={i}>📄 {item}</p>
+          {/* DESKTOP CARDS */}
+          <Row className="vs-top d-none d-md-flex">
+            {services.map((item, i) => (
+              <Col md={3} key={i}>
+                <div
+                  className={`vs-top-card ${
+                    active === i ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActive(i)}
+                >
+                  <div className="vs-card-inner">
+                    <div className="vs-icon">
+                      <FiCommand />
+                    </div>
+
+                    <h3>
+                      {item.title.split("\n").map((line, idx) => (
+                        <span key={idx}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
+                    </h3>
+                  </div>
+                </div>
+              </Col>
             ))}
+          </Row>
+
+          {/* MOBILE SELECT */}
+          <div className="d-md-none mt-4">
+            <select
+              className="form-select vs-mobile-select"
+              value={active}
+              onChange={(e) => setActive(Number(e.target.value))}
+            >
+              {services.map((item, i) => (
+                <option key={i} value={i}>
+                  {item.title.replace("\n", " ")}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* BOTTOM */}
+          <div className="vs-bottom">
+            {/* LEFT */}
+            <div className="vs-bottom-left">
+              <div className="vs-text">
+                <p>☑ 100 % Safety</p>
+                <p>☑ 2x Fast service</p>
+                <p>☑ Protected Documents</p>
+              </div>
+
+              <div className="vs-left-image">
+                <img src="/1199.png" alt="service" />
+              </div>
+            </div>
+
+            {/* RIGHT */}
+            <div className="vs-bottom-right">
+              {services[active].content.map((item, i) => (
+                <p key={i}>
+                  <FiFileText className="doc-icon" />
+                  {item}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </Container>

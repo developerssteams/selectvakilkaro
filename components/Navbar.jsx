@@ -24,12 +24,7 @@ function Navbar() {
             <div className="rating-bar mb-3" data-aos="fade-down">
               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="google" className="google-icon" />
 
-              <div className="rating-users">
-                <img src="https://i.pravatar.cc/40?img=1" alt="user" />
-                <img src="https://i.pravatar.cc/40?img=2" alt="user" />
-                <img src="https://i.pravatar.cc/40?img=3" alt="user" />
-                <img src="https://i.pravatar.cc/40?img=4" alt="user" />
-              </div>
+
 
               <div className="rating-text">
                 <span className="stars">★★★★★</span>
@@ -46,9 +41,7 @@ function Navbar() {
             </h1>
 
             {/* Subtitle */}
-            <p className="hero-subtitle">
-              Business Registration, Trademark, Taxation, Legal Compliance & Legal Services in few clicks.
-            </p>
+
 
             {/* Search Box */}
             <div className="search-wrapper">
@@ -62,6 +55,9 @@ function Navbar() {
                 <span className="search-icon">🔍</span>
               </div>
             </div>
+            <p className="hero-subtitle">
+              Business Registration, Trademark, Taxation, Legal Compliance & Legal Services in few clicks.
+            </p>
 
             {/* Buttons */}
             <div className="hero-buttons my-5">
