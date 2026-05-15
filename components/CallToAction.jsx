@@ -5,7 +5,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const CallToAction = () => {
     return (
-        <section className="cta-section">
+        <section className="cta-section pt-5">
+            <div className="container-xxl">
             <div className="cta-inner">
 
                 <div className="cta-content">
@@ -30,10 +31,7 @@ const CallToAction = () => {
                     </div>
                 </div>
 
-                <div className="cta-image">
-                    <img src="/call_to_action1.png" alt="Expert Support" />
-                </div>
-
+            </div>
             </div>
         </section>
     );

@@ -34,74 +34,75 @@ const data = [
 
 const NewsSection = () => {
     return (
-        <section className="news-section">
-            <div className="container-fluid bg-white p-5" >
+        <section className="news-section pt-5">
+            <div className="container-xxl">
 
-                {/* HEADING */}
-                <div className="news-heading text-center">
+                <div className="section-wrapper">
+                    {/* HEADING */}
+                    <div className="news-heading text-center">
 
-                    <h2>
-                        VakilKaro In News
-                    </h2>
+                        <h2>
+                            VakilKaro In News
+                        </h2>
 
-                    <p className="">
-                        See how VakilKaro is making headlines and redefining the legal-tech landscape through
-                        innovation, transparency, and excellence. Catch up on our latest features, press releases
-                    </p>
+                        <p className="">
+                            See how VakilKaro is making headlines and redefining the legal-tech landscape through
+                            innovation, transparency, and excellence. Catch up on our latest features, press releases
+                        </p>
 
-                </div>
+                    </div>
 
-                {/* CARDS */}
-                <Row className="g-4 justify-content-center">
+                    {/* CARDS */}
+                    <Row className="g-4 justify-content-center">
 
-                    {data.map((item, i) => (
+                        {data.map((item, i) => (
 
-                        <Col lg={3} md={6} key={i}>
+                            <Col lg={3} md={6} key={i}>
 
-                            <div className="news-card">
+                                <div className="news-card">
 
-                                {/* IMAGE */}
-                                <div className="news-img-wrapper">
+                                    {/* IMAGE */}
+                                    <div className="news-img-wrapper">
 
-                                    <img
-                                        src={`${item.img}?auto=format&fit=crop&w=900&q=80`}
-                                        alt="news"
-                                    />
+                                        <img
+                                            src={`${item.img}?auto=format&fit=crop&w=900&q=80`}
+                                            alt="news"
+                                        />
 
-                                    {/* DATE */}
-                                    <div className="news-date">
-                                        30 <br />
-                                        Nov <br />
-                                        2021
+                                        {/* DATE */}
+                                        <div className="news-date">
+                                            30 <br />
+                                            Nov <br />
+                                            2021
+                                        </div>
+
+
+
+
                                     </div>
 
+                                    {/* CONTENT */}
+                                    <div className="news-content">
 
+                                        <h3>{item.title}</h3>
 
+                                        <p>{item.desc}</p>
 
-                                </div>
+                                        <span className="news-read">
+                                            Read More
+                                        </span>
 
-                                {/* CONTENT */}
-                                <div className="news-content">
-
-                                    <h3>{item.title}</h3>
-
-                                    <p>{item.desc}</p>
-
-                                    <span className="news-read">
-                                        Read More
-                                    </span>
+                                    </div>
 
                                 </div>
 
-                            </div>
+                            </Col>
 
-                        </Col>
+                        ))}
 
-                    ))}
+                    </Row>
 
-                </Row>
-
-
+                </div>
             </div>
         </section>
     );

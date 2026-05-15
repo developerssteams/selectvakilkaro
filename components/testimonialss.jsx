@@ -120,61 +120,59 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="testimonials-section">
-      <div className="container-fluid bg-white p-5">
-        {/* HEADING */}
-        <div className="text-center testimonials-heading">
+    <section className="testimonials-section py-5">
+      <div className="container-xxl ">
+        <div className="section-wrapper">
+          <div className="text-center testimonials-heading">
+            <h2>
+              What our Clients are <br />
+              saying about us!
+            </h2>
+          </div>
+          {/* SLIDER */}
+          <Slider {...settings}>
 
-          <h2>
-            What our Clients are <br />
-            saying about us!
-          </h2>
+            {testimonials.map((item, index) => (
 
-        </div>
+              <div key={index} className="testimonials-slide">
 
-        {/* SLIDER */}
-        <Slider {...settings}>
+                <div className="testimonials-card">
 
-          {testimonials.map((item, index) => (
+                  {/* QUOTE */}
+                  <div className="testimonials-quote">
+                    <FaQuoteLeft />
+                  </div>
 
-            <div key={index} className="testimonials-slide">
+                  {/* TEXT */}
+                  <p className="testimonials-text">
+                    {item.text}
+                  </p>
 
-              <div className="testimonials-card">
+                  {/* LINE */}
+                  <div className="testimonials-line"></div>
 
-                {/* QUOTE */}
-                <div className="testimonials-quote">
-                  <FaQuoteLeft />
-                </div>
+                  {/* USER */}
+                  <div className="testimonials-user">
 
-                {/* TEXT */}
-                <p className="testimonials-text">
-                  {item.text}
-                </p>
+                    <img src={item.img} alt={item.name} />
 
-                {/* LINE */}
-                <div className="testimonials-line"></div>
+                    <div>
+                      <h4>{item.name}</h4>
+                      <span>{item.role}</span>
+                    </div>
 
-                {/* USER */}
-                <div className="testimonials-user">
-
-                  <img src={item.img} alt={item.name} />
-
-                  <div>
-                    <h4>{item.name}</h4>
-                    <span>{item.role}</span>
                   </div>
 
                 </div>
 
               </div>
 
-            </div>
+            ))}
 
-          ))}
-
-        </Slider>
+          </Slider>
 
 
+        </div>
       </div>
 
     </section>

@@ -8,6 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 const services = [
   {
     title: "Company\nRegistration",
+    icon: "img: /Icons/1.jpg",
     content: [
       "Private Limited Company Registration",
       "Limited Liability Partnership Registration",
@@ -23,6 +24,7 @@ const services = [
 
   {
     title: "Tax\nServices",
+    icon: "img: /Icons/2.jpg",
     content: [
       "GST Filing",
       "Income Tax Filing",
@@ -35,6 +37,7 @@ const services = [
 
   {
     title: "Trademark\nRegistration",
+    icon: "img: /Icons/3.jpg",
     content: [
       "Trademark Registration",
       "Copyright Registration",
@@ -47,6 +50,7 @@ const services = [
 
   {
     title: "License/\nCertificate",
+    icon: "img: /Icons/4.jpg",
     content: [
       "GST Registration",
       "Company Address Change",
@@ -62,8 +66,9 @@ const Servicess = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="vs-section">
-      <Container fluid>
+    <section className="vs-section pt-5">
+
+      <div className="container-xxl">
         <div className="vs-wrapper">
           {/* HEADING */}
           <div className="text-center">
@@ -88,14 +93,21 @@ const Servicess = () => {
             {services.map((item, i) => (
               <Col md={3} key={i}>
                 <div
-                  className={`vs-top-card ${
-                    active === i ? "active" : ""
-                  }`}
+                  className={`vs-top-card ${active === i ? "active" : ""
+                    }`}
                   onMouseEnter={() => setActive(i)}
                 >
                   <div className="vs-card-inner">
                     <div className="vs-icon">
-                      <FiCommand />
+                      {item.icon.startsWith("img:") ? (
+                        <img
+                          src={item.icon.replace("img:", "").trim()}
+                          alt="icon"
+                          className="vs-icon-img"
+                        />
+                      ) : (
+                        <FiCommand />
+                      )}
                     </div>
 
                     <h3>
@@ -153,7 +165,8 @@ const Servicess = () => {
             </div>
           </div>
         </div>
-      </Container>
+
+      </div>
     </section>
   );
 };

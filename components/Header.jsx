@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar_Section.css";
 
 
@@ -38,7 +38,7 @@ function Header() {
     return (
         <>
             <header className="rk-header">
-                <div className="container-fluid px-3 px-md-4">
+                <div className="container-xxl">
                     <div className="rk-box">
                         {/* Logo */}
                         <div className="rk-left">

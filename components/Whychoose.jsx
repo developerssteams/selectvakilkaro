@@ -151,8 +151,8 @@ const Whychoose = () => {
   const currentContent = contentData[activeIndex];
 
   return (
-    <section className="why-section">
-      <div className="container-fluid bg-white p-5">
+    <section className="why-section pt-5">
+      <div className="container-xxl">
 
         <div className="why-wrapper">
           {/* TOP */}

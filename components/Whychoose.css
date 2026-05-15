@@ -4,9 +4,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-.why-section {
+/* .why-section {
   padding: 40px 50px;
-}
+} */
 
 .why-section .container-fluid {
   border-radius: 16px;
@@ -16,7 +16,7 @@
 .why-wrapper {
   background: white;
   border-radius: 30px;
-  padding: 10px;
+  padding: 40px;
 }
 
 .why-top h1 {

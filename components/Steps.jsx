@@ -32,10 +32,11 @@ const steps = [
 
 export default function Steps() {
   return (
-    <section className="work-section">
-      <div className="container-fluid bg-white p-5" >
-
+    <section className="work-section pt-5">
+      <div className="container-xxl">
         {/* TOP SECTION */}
+        <div className="section-wrapper">
+
         <div className="row align-items-start work-top">
 
           <div className="col-lg-7 mb-4 mb-lg-0">
@@ -90,6 +91,7 @@ export default function Steps() {
             </div>
           ))}
 
+        </div>
         </div>
       </div>
     </section>

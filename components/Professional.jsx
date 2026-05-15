@@ -37,9 +37,12 @@ const brands = [
 
 const Professional = () => {
   return (
-    <section className="support-section">
-      <Container>
+    <section className="support-section pt-5">
+      <div className="container-xxl">
+
         {/* Header */}
+        <div className="section-wrapper">
+
         <div className="text-center">
           <h1>
             Professional Support on{" "}
@@ -81,7 +84,9 @@ const Professional = () => {
           </div>
 
         </div>
-      </Container>
+
+        </div>
+      </div>
     </section>
   );
 };

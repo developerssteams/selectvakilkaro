@@ -15,8 +15,8 @@ const TrustedSection = () => {
     ];
 
     return (
-        <section className="trusted-section">
-            <div className="container-fluid">
+        <section className="trusted-section pt-5">
+            <div className="container-xxl">
                 <div className="trusted-wrapper">
 
                     {/* TOP AREA */}

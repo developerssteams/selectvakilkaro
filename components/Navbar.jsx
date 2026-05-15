@@ -2,8 +2,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 // import "./Navbar.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Navbar() {
   useEffect(() => {
@@ -18,7 +19,7 @@ function Navbar() {
     <section className="header-section">
       <div className="container">
         <div className="row justify-content-center text-center pt-5">
-          <div className="col-md-7" data-aos="fade-up">
+          <div className="col-md-9" data-aos="fade-up">
 
             {/* Rating Bar */}
             <div className="rating-bar mb-3" data-aos="fade-down">
@@ -35,9 +36,9 @@ function Navbar() {
 
             {/* Title */}
             <h1 className="hero-title">
-              Legal Mein Kuch Bhi karo To <br />
+              Legal Mein Kuch Bhi karo To <br />Vakilkaro
               {/* <span style={{ color: '#efbf04' }}>Vakilkaro</span> */}
-              <span style={{ color: '#efbf04' }}>Vakilkaro</span>
+              {/* <span style={{ color: '#efbf04' }}></span> */}
             </h1>
 
             {/* Subtitle */}
@@ -46,15 +47,25 @@ function Navbar() {
             {/* Search Box */}
             <div className="search-wrapper">
               <div className="search-box">
+
                 <input
                   type="text"
-                  placeholder="Search services, registration..."
+                  placeholder="Search ..."
                   className="search-field"
                   onChange={(e) => handleSearch(e.target.value)}
                 />
-                <span className="search-icon">🔍</span>
+
+                {/* Search Button */}
+                <button
+                  className="search-btn"
+                  onClick={() => handleSearch()}
+                >
+                  <i className="bi bi-search"></i>
+                </button>
+
               </div>
             </div>
+
             <p className="hero-subtitle">
               Business Registration, Trademark, Taxation, Legal Compliance & Legal Services in few clicks.
             </p>
