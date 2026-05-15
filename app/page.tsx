@@ -13,6 +13,7 @@ import Steps from "@/components/Steps";
 import Testimonialss from "@/components/testimonialss";
 import TrustedSection from "@/components/TrustedSection"
 import CallToAction from "@/components/CallToAction";
+import ContactQuery from "@/components/ContactQuery";
 export default function Home() {
   return (
     <>
@@ -26,6 +27,7 @@ export default function Home() {
       <Professional />
       <News />
       {/* <JourneyMap /> */}
+      <ContactQuery />
       <Faq />
       <Testimonialss />
       <TawkTo />

@@ -24,7 +24,7 @@ const services = [
 
   {
     title: "Tax\nServices",
-    icon: "img: /Icons/2.jpg",
+    icon: "img: /Icons/1.png",
     content: [
       "GST Filing",
       "Income Tax Filing",
@@ -37,7 +37,7 @@ const services = [
 
   {
     title: "Trademark\nRegistration",
-    icon: "img: /Icons/3.jpg",
+    icon: "img: /Icons/3.jpeg",
     content: [
       "Trademark Registration",
       "Copyright Registration",
@@ -50,7 +50,7 @@ const services = [
 
   {
     title: "License/\nCertificate",
-    icon: "img: /Icons/4.jpg",
+    icon: "img: /Icons/4.png",
     content: [
       "GST Registration",
       "Company Address Change",
