@@ -69,7 +69,7 @@ function Navbar() {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-12 p-0">
             {/* Stats Bar */}
             <div className="hero-stats-bar mb-5">
               <div className="stats-left">

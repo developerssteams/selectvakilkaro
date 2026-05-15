@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "./Steps.css";
+// import "./Steps.css";
 
 const steps = [
   {
