@@ -195,6 +195,11 @@ function Header() {
                     {/* Mobile Menu */}
                     <div className={`rk-mobile-menu ${menuOpen ? "open" : ""}`}>
                         <div className="mobile-menu-content">
+                            <div className="mobile-top-bar">
+                                <button className="mobile-back-btn" onClick={closeMenu}>
+                                    ← Back
+                                </button>
+                            </div>
                             <div className="mobile-search-box">
                                 <input type="text" placeholder="Search Services" className="rk-search-input" />
                             </div>
