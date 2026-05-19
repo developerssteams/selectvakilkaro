@@ -1,17 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Whychoose.css";
+// import "./Whychoose.css";
 
 const contentData = [
   {
     title: "LARGEST NETWORK",
-    icon: "⌘",
+    icon: "./Whychoose/lergestnetwork.jpg",
     description:
       "Affordable pricing with premium quality legal solutions for startups and businesses",
 
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+      "./Whychoose/lergestnetwork.jpg",
 
     topics: [
       {
@@ -34,12 +34,12 @@ const contentData = [
 
   {
     title: "BEST PRICE GUARANTEE",
-    icon: "⌘",
+    icon: "./Whychoose/bestpriceguarantee.jpg",
     description:
       "Affordable pricing with premium quality legal solutions for startups and businesses.",
 
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop",
+      "./Whychoose/bestpriceguarantee.jpg",
 
     topics: [
       {
@@ -62,12 +62,12 @@ const contentData = [
 
   {
     title: "PROFESSIONAL TEAM",
-    icon: "⌘",
+    icon: "./Whychoose/professionalteam.jpg",
     description:
       "Experienced legal experts and professionals helping your business grow smoothly.",
 
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+      "./Whychoose/professionalteam.jpg",
 
     topics: [
       {
@@ -90,12 +90,12 @@ const contentData = [
 
   {
     title: "24/7 SUPPORT",
-    icon: "⌘",
+    icon: "./Whychoose/24_7support.jpg",
     description:
       "Round the clock support system for all your legal and business requirements.",
 
     image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800&auto=format&fit=crop",
+      "./Whychoose/24_7support.jpg",
 
     topics: [
       {
@@ -177,7 +177,13 @@ const Whychoose = () => {
                     }}
                   >
                     <div className="why-item-top">
-                      <span className="icon-box">{item.icon}</span>
+                      <span className="icon-box">
+                        <img
+                          src={item.icon}
+                          alt={item.title}
+                          className="why-icon-img"
+                        />
+                      </span>
 
                       <h3>{item.title}</h3>
                     </div>

@@ -14,10 +14,11 @@ import TrustedSection from "@/components/TrustedSection"
 import CallToAction from "@/components/CallToAction";
 import ContactQuery from "@/components/ContactQuery";
 import BlogSection from "@/components/Blogs";
+import BlogList from "@/components/BlogList";
 export default function Home() {
   return (
     <>
-      <Header />
+
       <Navbar />
       <TrustedSection />
       <Servicess />
@@ -31,7 +32,7 @@ export default function Home() {
       <ContactQuery />
       <Faq />
       <TawkTo />
-      <Footer />
+
     </>
   );
 }

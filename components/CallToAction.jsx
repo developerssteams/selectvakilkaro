@@ -1,5 +1,5 @@
 "use client";
-import "./CallToAction.css";
+// import "./CallToAction.css";
 import { FiArrowUpRight } from "react-icons/fi";
 // import ctaImg from "call_to_action1.png";
 

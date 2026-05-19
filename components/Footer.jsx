@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Footer.css";
+// import "./Footer.css";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -37,7 +38,7 @@ const Footer = () => {
                 <ul>
                   <li>About Us</li>
                   <li>News</li>
-                  <li>Blogs</li>
+                  <li><Link href="/Blogs" >Blogs</Link></li>
                   <li>Associate Partner</li>
                   <li>Talk to an Expert</li>
                 </ul>
