@@ -138,11 +138,14 @@ const BlogHeading = () => {
                                                 </a>
                                             </li>
 
-                                            <li>
-                                                <a href="#" className="blog-btn">
+                                            {/* <li>
+                                                <Link
+                                                    href={`/blogs/${blog.slug}`}
+                                                    className="blog-btn"
+                                                >
                                                     Read More <FaArrowRight />
-                                                </a>
-                                            </li>
+                                                </Link>
+                                            </li> */}
                                         </ul>
                                     </div>
                                 </div>

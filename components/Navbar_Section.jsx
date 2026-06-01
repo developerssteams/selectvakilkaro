@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 function Navbar_Section() {
     const [activeMenu, setActiveMenu] = useState(null);

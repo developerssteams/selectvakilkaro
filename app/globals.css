@@ -102,9 +102,10 @@ body {
     transition: 0.3s ease;
 }
 
-.rk-nav-desktop a:hover {
+
+/* .rk-nav-desktop a:hover {
     color: #fff;
-}
+} */
 
 .rk-menu-item.pill-btn a {
     padding: 8px 16px;
@@ -476,9 +477,10 @@ body {
 .mega-link {
     font-size: 16px;
     font-weight: 500;
-    color: #222;
+    /* color: #222; */
     cursor: pointer;
     transition: 0.2s ease;
+    color: #000 !important;
 }
 
 .mega-link:hover {

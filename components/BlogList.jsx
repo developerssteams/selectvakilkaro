@@ -6,50 +6,27 @@ import {
     FaArrowRight,
     FaLocationArrow,
 } from "react-icons/fa";
+import Link from "next/link"; // ✅ IMPORT ADD KARO
 // import "./BlogList.css";
 
 const blogList = [
     {
         img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c",
-        title:
-            "The Vakilkaro Brief: Bombay High Court’s Landmark Ruling on...",
+        title: "The Vakilkaro Brief: Bombay High Court’s Landmark Ruling on...",
         category: "Politics",
+        slug: "bombay-high-court-landmark-ruling", // ✅ ADD SLUG
     },
     {
         img: "https://images.unsplash.com/photo-1495020689067-958852a7765e",
-        title:
-            "SEBI Proposes Revival of Open Market Buybacks Framework",
+        title: "SEBI Proposes Revival of Open Market Buybacks Framework",
         category: "Environment",
+        slug: "sebi-open-market-buybacks", // ✅ ADD SLUG
     },
     {
         img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-        title:
-            "Corporate Governance Rules Get Major Compliance Updates",
+        title: "Corporate Governance Rules Get Major Compliance Updates",
         category: "Business",
-    },
-];
-
-const newsData = [
-    {
-        author: "John Techson",
-        category: "Technology",
-        title: "Tech Giants Announce New Product Line",
-        desc: "Explore the latest innovations from tech industry leaders, unveiling new products that promise to transform the digital landscape.",
-        date: "October 15, 2023",
-    },
-    {
-        author: "Jane Smith",
-        category: "Politics",
-        title: "Government Introduces New Startup Policy",
-        desc: "The latest startup reforms are expected to boost entrepreneurship and attract global investors.",
-        date: "October 18, 2023",
-    },
-    {
-        author: "Alex Brown",
-        category: "Health",
-        title: "Healthcare Sector Sees Major Innovation",
-        desc: "Medical technology continues to evolve rapidly with AI-powered healthcare solutions.",
-        date: "October 20, 2023",
+        slug: "corporate-governance-rules", // ✅ ADD SLUG
     },
 ];
 
@@ -60,7 +37,6 @@ const Listblog = () => {
             <section className="header-section-padding blog-posts pt-5">
                 <Container fluid="xxl">
                     <div className="blog-section-title">
-
                         {/* Heading */}
                         <Row className="align-items-baseline">
                             <Col md={10}>
@@ -74,16 +50,9 @@ const Listblog = () => {
                                     industry's standard dummy text ever since the 1500s.
                                 </p>
                             </Col>
-
-                            {/* <Col md={2} className="text-md-end mt-3 mt-md-0">
-                                <a href="#" className="blog-btn">
-                                    View All Blog <FaArrowRight />
-                                </a>
-                            </Col> */}
                         </Row>
 
                         {/* Featured Blog */}
-
                         <Row className="mt-5 align-items-center blog-outer">
                             <Col md={3}>
                                 <img
@@ -138,22 +107,63 @@ const Listblog = () => {
                                             </li>
 
                                             <li>
-                                                <a href="#" className="blog-btn">
+                                                {/* ✅ FIXED: Use a proper slug */}
+                                                <Link href={`/blogs/sebi-open-market-buybacks`} className="blog-btn">
                                                     Read More <FaArrowRight />
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </Col>
                         </Row>
-
-                        
                     </div>
                 </Container>
             </section>
 
             {/* BLOG LIST */}
+            <section className="blog-list py-5">
+                <Container fluid="xxl">
+                    <Row>
+                        {blogList.map((item, index) => (
+                            <Col md={4} key={index} className="mb-4">
+                                <div className="blog-list-inner h-100">
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className="img-fluid rounded-4"
+                                    />
+
+                                    <h4 className="mt-4 fw-bold">
+                                        {item.title}
+                                    </h4>
+
+                                    <span className="blog-category">
+                                        {item.category}
+                                    </span>
+
+                                    <div className="share-read-more mt-4">
+                                        <ul className="list-unstyled d-flex justify-content-between align-items-center">
+                                            <li>
+                                                <a href="#">
+                                                    <FaLocationArrow /> 204
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                {/* ✅ FIXED: Dynamic slug from item */}
+                                                <Link href={`/blogs/${item.slug}`} className="blog-btn">
+                                                    Read More <FaArrowRight />
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
 
             <section className="blog-list py-5">
                 <Container fluid="xxl">
@@ -184,50 +194,10 @@ const Listblog = () => {
                                             </li>
 
                                             <li>
-                                                <a href="#" className="blog-btn">
+                                                {/* ✅ FIXED: Dynamic slug from item */}
+                                                <Link href={`/blogs/${item.slug}`} className="blog-btn">
                                                     Read More <FaArrowRight />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                </Container>
-            </section>
-              <section className="blog-list py-5">
-                <Container fluid="xxl">
-                    <Row>
-                        {blogList.map((item, index) => (
-                            <Col md={4} key={index} className="mb-4">
-                                <div className="blog-list-inner h-100">
-                                    <img
-                                        src={item.img}
-                                        alt={item.title}
-                                        className="img-fluid rounded-4"
-                                    />
-
-                                    <h4 className="mt-4 fw-bold">
-                                        {item.title}
-                                    </h4>
-
-                                    <span className="blog-category">
-                                        {item.category}
-                                    </span>
-
-                                    <div className="share-read-more mt-4">
-                                        <ul className="list-unstyled d-flex justify-content-between align-items-center">
-                                            <li>
-                                                <a href="#">
-                                                    <FaLocationArrow /> 204
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" className="blog-btn">
-                                                    Read More <FaArrowRight />
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
